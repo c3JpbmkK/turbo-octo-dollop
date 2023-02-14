@@ -1,0 +1,13 @@
+apiVersion: appprojects.argoproj.io
+metadata:
+  name: featsrini
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - namespace: '*'
+    server: https://featsrini:6443
+  sourceRepos:
+  - https://charts.jetstack.io

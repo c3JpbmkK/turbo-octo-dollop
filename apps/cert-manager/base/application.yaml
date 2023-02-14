@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager
+spec:
+  destination:
+    name: ''
+    namespace: custom-cert-manager
+    server: >-
+      https://featsrini:6443
+  source:
+    path: ''
+    repoURL: 'https://charts.jetstack.io'
+    targetRevision: v1.11.0
+    chart: cert-manager
+  sources: []
+  project: featsrini
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+    - PrunePropagationPolicy=foreground
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
