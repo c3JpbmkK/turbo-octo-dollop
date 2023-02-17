@@ -5,24 +5,26 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - clusters:
-      selector:
-        matchLabels:
-          tenant: liquid-reply
-  - git:
-      repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-      revision: HEAD
-      directories:
-      - path: clusters/tracer/*
+  - matrix:
+      generators:
+      - clusters:
+          selector:
+            matchLabels:
+              tenant: liquid-reply
+      - git:
+          repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
+          revision: HEAD
+          directories:
+          - path: clusters/tracer/*
   template:
     metadata:
-      name: "application-{{ path.basenameNormalized }}"
+      name: "application-{{path.basenameNormalized}}"
     spec:
-      project: "{{ name }}"
+      project: "{{name}}"
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: HEAD
-        path: clusters/{{ name }}/{{ path.basenameNormalized }}
+        path: "clusters/{{name}}/{{path.basenameNormalized}}"
         # directory:
         #   recurse: true
       destination:
