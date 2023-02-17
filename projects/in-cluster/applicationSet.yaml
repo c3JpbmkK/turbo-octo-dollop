@@ -16,13 +16,13 @@ spec:
       - path: clusters/tracer/*
   template:
     metadata:
-      name: "application-{{ path }}"
+      name: "application-{{ path.basenameNormalized }}"
     spec:
       project: "{{ name }}"
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: HEAD
-        path: clusters/{{ name }}/{{ path }}
+        path: clusters/{{ name }}/{{ path.basenameNormalized }}
         # directory:
         #   recurse: true
       destination:
