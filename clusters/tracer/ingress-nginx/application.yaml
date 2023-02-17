@@ -14,7 +14,7 @@ spec:
     chart: ingress-nginx
     helm:
       valueFiles:
-        - ./values.yaml
+        - values.yaml
   destination:
     name: tracer
     namespace: nginx

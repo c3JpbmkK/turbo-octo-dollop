@@ -13,8 +13,8 @@ spec:
     targetRevision: v1.11.0
     chart: cert-manager
     helm:
-      valueFiles:
-        - values.yaml
+      parameters:
+        installCRDs: true
   destination:
     name: tracer
     namespace: cert-manager
