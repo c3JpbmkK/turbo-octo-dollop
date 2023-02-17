@@ -1,4 +1,4 @@
 # Values file for cert-manager
 
-cert-manager:
+certmanager:
   installCRDs: true

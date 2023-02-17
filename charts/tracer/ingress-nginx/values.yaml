@@ -1,6 +1,6 @@
 # Values file for ingress-nginx
 
-ingress-nginx:
+nginx:
   defaultBackend.enabled: true
   controller.autoscaling.enabled: true
   controller.autoscaling.maxReplicas: 5
