@@ -32,5 +32,6 @@ spec:
   ignoreDifferences:
   - group: 'admissionregistration.k8s.io'
     kind: 'ValidatingWebhookConfiguration'
+    name: tracer-certmanager-cert-manager-webhook
     jsonPointers:
     - /webhooks #*/admissionReviewVersions/namespaceSelector
