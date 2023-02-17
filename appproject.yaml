@@ -9,6 +9,8 @@ spec:
   destinations:
   - namespace: '*'
     server: https://tracer-90b31e5e.hcp.westeurope.azmk8s.io:443
+  - namespace: '*'
+    server: https://kubernetes.default.svc
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'

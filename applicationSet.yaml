@@ -26,7 +26,7 @@ spec:
         directory:
           recurse: true
       destination:
-        server: '{{server}}'
+        server: https://kubernetes.default.svc
         namespace: argocd
       # destination:
       #   name: tracer
