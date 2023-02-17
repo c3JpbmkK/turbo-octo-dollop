@@ -1,0 +1,14 @@
+apiVersion: appprojects.argoproj.io
+kind: AppProject
+metadata:
+  name: tracer
+  namespace: argocd
+spec:
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: '*'
+    server: https://tracer-90b31e5e.hcp.westeurope.azmk8s.io:443
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
