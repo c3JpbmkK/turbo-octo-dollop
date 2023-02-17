@@ -28,22 +28,12 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: argocd
-      # destination:
-      #   name: tracer
-      #   namespace: cert-manager
-      # source:
-      #   path: ''
-      #   repoURL: 'https://charts.jetstack.io'
-      #   targetRevision: v1.11.0
-      #   chart: cert-manager
-      # sources: []
-      # project: tracer
-      # syncPolicy:
-      #   syncOptions:
-      #   - CreateNamespace=true
-      #   - ApplyOutOfSyncOnly=true
-      #   - PrunePropagationPolicy=foreground
-      #   automated:
-      #     prune: true
-      #     selfHeal: true
-      #     allowEmpty: true
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        - ApplyOutOfSyncOnly=true
+        - PrunePropagationPolicy=foreground
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
