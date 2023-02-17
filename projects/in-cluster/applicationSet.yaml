@@ -1,32 +1,33 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cert-manager
+  name: tracer-application-set
   namespace: argocd
 spec:
   generators:
   - clusters:
       selector:
         matchLabels:
-          env: dev
-  # - git:
-  #     repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-  #     revision: HEAD
-  #     directories:
-  #     - path: projects/tracer
+          tenant: liquid-reply
+  - git:
+      repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
+      revision: HEAD
+      directories:
+      - path: clusters/tracer/*
   template:
     metadata:
-      name: cluster-tracer
+      name: "application-{{ path }}"
     spec:
-      project: tracer
+      project: "{{ name }}"
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: HEAD
-        path: projects/tracer
-        directory:
-          recurse: true
+        path: clusters/{{ name }}/{{ path }}
+        # directory:
+        #   recurse: true
       destination:
-        server: https://kubernetes.default.svc
+        # Which cluster to deploy the application.argoproj.io
+        name: in-cluster
         namespace: argocd
       syncPolicy:
         syncOptions:
