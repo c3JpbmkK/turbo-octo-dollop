@@ -1,0 +1,7 @@
+# Values file for ingress-nginx
+
+controller.autoscaling.enabled: true
+controller.autoscaling.maxReplicas: 5
+controller.autoscaling.minReplicas: 1
+controller.autoscaling.targetCPUUtilizationPercentage: 50
+controller.autoscaling.targetMemoryUtilizationPercentage: 50
