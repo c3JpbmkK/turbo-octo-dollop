@@ -24,7 +24,7 @@ spec:
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: main
-        path: "clusters/{{name}}/{{path.basenameNormalized}}"
+        path: "charts/{{name}}/{{path.basenameNormalized}}"
       destination:
         name: in-cluster
         namespace: argocd
