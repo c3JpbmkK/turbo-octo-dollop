@@ -14,13 +14,17 @@ spec:
                 operator: In
                 values:
                   - liquid-reply
+              - key: env
+                operator: In
+                values:
+                  - dev
           values:
             region: westeurope
       - git:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
           revision: 3-apps
           directories:
-          - path: apps/*
+          - path: apps/cert-manager
   template:
     metadata:
       name: '{{ name }}-{{ path.basenameNormalized }}'
