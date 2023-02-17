@@ -18,7 +18,7 @@ spec:
             region: westeurope
       - git:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-          revision: main
+          revision: apps-for-days
           directories:
           - path: charts/tracer/*
   template:
@@ -35,8 +35,8 @@ spec:
       project: '{{ name }}'
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-        targetRevision: main
-        path: 'charts/{{ name }}/{{ path.basenameNormalized }}'
+        targetRevision: apps-for-days
+        path: 'clusters/{{ name }}/{{ path.basenameNormalized }}'
         helm:
           valueFiles:
             - values.yaml
