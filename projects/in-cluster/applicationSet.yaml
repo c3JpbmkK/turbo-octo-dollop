@@ -18,7 +18,7 @@ spec:
           - path: clusters/tracer/*
   template:
     metadata:
-      name: "application-{{path.basenameNormalized}}"
+      name: "{{name}}-applicationset-{{path.basenameNormalized}}"
     spec:
       project: "{{name}}"
       source:
