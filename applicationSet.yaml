@@ -9,20 +9,41 @@ spec:
       selector:
         matchLabels:
           env: dev
-  - git:
-      repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-      revision: HEAD
-      directories:
-      - path: projects/tracer/
+  # - git:
+  #     repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
+  #     revision: HEAD
+  #     directories:
+  #     - path: projects/tracer
   template:
     metadata:
-      name: tracer
+      name: cluster-tracer
     spec:
       project: tracer
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: projects/tracer
+        directory:
+          recurse: true
       destination:
-        server: '{{url}}'
-        namespace: guestbook
+        server: '{{server}}'
+        namespace: argocd
+      # destination:
+      #   name: tracer
+      #   namespace: cert-manager
+      # source:
+      #   path: ''
+      #   repoURL: 'https://charts.jetstack.io'
+      #   targetRevision: v1.11.0
+      #   chart: cert-manager
+      # sources: []
+      # project: tracer
+      # syncPolicy:
+      #   syncOptions:
+      #   - CreateNamespace=true
+      #   - ApplyOutOfSyncOnly=true
+      #   - PrunePropagationPolicy=foreground
+      #   automated:
+      #     prune: true
+      #     selfHeal: true
+      #     allowEmpty: true
