@@ -35,4 +35,4 @@ spec:
     kind: 'ValidatingWebhookConfiguration'
     name: tracer-certmanager-cert-manager-webhook
     jsonPointers:
-    - /webhooks/*/admissionReviewVersions/namespaceSelector
+    - /webhooks/*/admissionReviewVersions/*/namespaceSelector
