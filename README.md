@@ -11,6 +11,7 @@ tree
 │       └── ingress-nginx
 │           ├── Chart.yaml
 │           └── values.yaml
+├── kill-port-forward.sh
 ├── nohup.out
 ├── port-forward.sh
 ├── projects
@@ -21,5 +22,5 @@ tree
 ├── setup.sh
 └── teardown.sh
 
-7 directories, 11 files
+7 directories, 12 files
 ```
