@@ -14,11 +14,11 @@ spec:
                 operator: In
                 values:
                   - liquid-reply
-              - key: name
+              - key: env
                 operator: In
                 values:
-                  - tracer
-            values:
+                  - int
+          values:
             region: westeurope
       - git:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
