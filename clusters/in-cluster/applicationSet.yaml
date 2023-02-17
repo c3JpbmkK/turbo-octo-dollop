@@ -18,7 +18,7 @@ spec:
             region: westeurope
       - git:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-          revision: apps
+          revision: 3-apps
           directories:
           - path: apps/*
   template:
@@ -35,7 +35,7 @@ spec:
       project: '{{ name }}'
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-        targetRevision: apps
+        targetRevision: 3-apps
         path: 'apps/{{ path.basenameNormalized }}'
         helm:
           valueFiles:
