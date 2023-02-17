@@ -37,9 +37,11 @@ spec:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: apps-for-days
         path: 'clusters/{{ name }}/{{ path.basenameNormalized }}'
-        helm:
-          valueFiles:
-            - values.yaml
+        directory:
+          include: values.yaml
+        # helm:
+        #   valueFiles:
+        #     - values.yaml
       destination:
         name: '{{ name }}'
         namespace: '{{ path.basenameNormalized }}'

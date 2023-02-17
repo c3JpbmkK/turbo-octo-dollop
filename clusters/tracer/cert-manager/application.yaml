@@ -13,6 +13,9 @@ spec:
     repoURL: 'https://charts.jetstack.io'
     targetRevision: v1.11.0
     chart: cert-manager
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     name: tracer
     namespace: cert-manager

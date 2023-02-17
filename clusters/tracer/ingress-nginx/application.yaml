@@ -13,6 +13,9 @@ spec:
     repoURL: 'https://kubernetes.github.io/ingress-nginx'
     targetRevision: '4.5.2'
     chart: nginx
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     name: tracer
     namespace: nginx
