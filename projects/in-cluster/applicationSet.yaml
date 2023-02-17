@@ -39,7 +39,7 @@ spec:
         path: 'clusters/{{ name }}/{{ path.basenameNormalized }}'
       destination:
         name: in-cluster
-        namespace: argocd
+        namespace: '{{ name }}'
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
