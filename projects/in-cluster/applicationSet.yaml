@@ -18,9 +18,9 @@ spec:
             region: westeurope
       - git:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-          revision: charted
+          revision: apps
           directories:
-          - path: charts/tracer/*
+          - path: apps/*
   template:
     metadata:
       name: '{{ name }}-{{ path.basenameNormalized }}'
@@ -35,8 +35,8 @@ spec:
       project: '{{ name }}'
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-        targetRevision: charted
-        path: 'charts/{{ name }}/{{ path.basenameNormalized }}'
+        targetRevision: apps
+        path: 'apps/{{ path.basenameNormalized }}'
         helm:
           valueFiles:
             - values.yaml
