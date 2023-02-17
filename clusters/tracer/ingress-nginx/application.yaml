@@ -9,13 +9,13 @@ metadata:
 spec:
   project: tracer
   source:
-    path: ''
+    # path: ''
     repoURL: 'https://kubernetes.github.io/ingress-nginx'
     targetRevision: '4.5.2'
     chart: ingress-nginx
     helm:
       valueFiles:
-        - https://github.com/c3JpbmkK/turbo-octo-dollop/blob/apps-for-days/clusters/tracer/ingress-nginx/values.yaml
+        - ./values.yaml
   destination:
     name: tracer
     namespace: nginx
