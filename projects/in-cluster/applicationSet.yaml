@@ -28,6 +28,7 @@ spec:
         app: '{{ path.basenameNormalized }}'
         cluster: '{{ name }}'
         topology.kubernetes.io/region: '{{ values.region }}'
+      # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
       finalizers:
         - resources-finalizer.argocd.argoproj.io
     spec:
@@ -45,7 +46,8 @@ spec:
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
-        # - ApplyOutOfSyncOnly=true
+        - ApplyOutOfSyncOnly=true
+        # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
         - PrunePropagationPolicy=foreground
         automated:
           prune: true
