@@ -37,14 +37,9 @@ spec:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: apps-for-days
         path: 'clusters/{{ name }}/{{ path.basenameNormalized }}'
-        directory:
-          include: values.yaml
-        # helm:
-        #   valueFiles:
-        #     - values.yaml
       destination:
-        name: '{{ name }}'
-        namespace: '{{ path.basenameNormalized }}'
+        name: in-cluster
+        namespace: argocd
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
