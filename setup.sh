@@ -27,19 +27,12 @@ sleep 10
 done
 argocd login --username admin --password "$ARGOCD_INITIAL_ADMIN_SECRET" 2>/dev/null || writeError
 
-## Add cluster to local argocd intance
+## List current cluster in local argocd intance
 argocd cluster list 2>/dev/null || writeError
-CURRENT_CONTEXT=$(kubectl --kubeconfig /home/"${HOST_USER}"/.kube/config config current-context)
-echo "Current context is ${CURRENT_CONTEXT}"
-read -p "Add ${CURRENT_CONTEXT} to argocd clusters (y/n)? " confirm
-case $confirm in
-    y|Y)
-        echo "Adding cluster ${CURRENT_CONTEXT}"
-        argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "${CURRENT_CONTEXT//-admin}" "${CURRENT_CONTEXT}" 2>/dev/null
-        ;;
-    n|N)
-        echo "Skipping cluster ${CURRENT_CONTEXT}"
-        ;;
-    *)
-        echo "Please enter y|Y or n|N" ;;
-esac
+
+## Add multiple clusters to local argocd instance
+echo "Adding cluster tracer-admin"
+argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "tracer" "tracer-admin" 2>/dev/null
+
+echo "Adding cluster visual-admin"
+argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "visual" "visual-admin" 2>/dev/null
