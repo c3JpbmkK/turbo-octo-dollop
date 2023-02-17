@@ -15,7 +15,8 @@ spec:
     helm:
       parameters:
         - name: installCRDs
-          values: 'true'
+          values: true
+          forceString: true
   destination:
     name: tracer
     namespace: cert-manager
