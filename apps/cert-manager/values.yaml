@@ -2,3 +2,8 @@
 
 certmanager:
   installCRDs: true
+  # https://github.com/cert-manager/cert-manager/issues/4114
+  # https://github.com/cert-manager/cert-manager/issues/4114#issuecomment-1145060432
+  webhook:
+    validatingWebhookConfigurationAnnotations:
+      admissions.enforcer/disabled: "true"
