@@ -19,7 +19,12 @@ spec:
   template:
     metadata:
       name: "{{name}}-{{path.basenameNormalized}}"
-    spec:
+      labels:
+        cluster: "{{name}}"
+        topology.kubernetes.io/region: westeurope
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
+      spec:
       project: "{{name}}"
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
