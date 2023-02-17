@@ -26,7 +26,7 @@ spec:
         targetRevision: main
         path: "clusters/{{name}}/{{path.basenameNormalized}}"
         helm:
-        - valueFiles:
+          valueFiles:
           - https://github.com/c3JpbmkK/turbo-octo-dollop/blob/main/clusters/tracer/cert-manager/values.yaml
       destination:
         name: in-cluster
