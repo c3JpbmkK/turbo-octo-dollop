@@ -1,5 +1,8 @@
 # turbo-octo-dollop
 
+```bash
+tree
+.
 ├── charts
 │   └── tracer
 │       ├── cert-manager
@@ -19,3 +22,4 @@
 └── teardown.sh
 
 7 directories, 11 files
+```
