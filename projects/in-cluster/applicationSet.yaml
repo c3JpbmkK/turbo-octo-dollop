@@ -33,7 +33,6 @@ spec:
         - CreateNamespace=true
         - ApplyOutOfSyncOnly=true
         - PrunePropagationPolicy=foreground
-        - RespectIgnoreDifferences=true
         automated:
           prune: true
           selfHeal: true
