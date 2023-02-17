@@ -14,7 +14,7 @@ spec:
     targetRevision: v1.11.0
     chart: cert-manager
     helm:
-      valuesFiles:
+      valueFiles:
       - values.yaml
   destination:
     name: tracer
