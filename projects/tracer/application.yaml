@@ -15,7 +15,7 @@ spec:
     helm:
       parameters:
       - name: "crds.install"
-        value: "true"
+        value: true
   sources: []
   project: tracer
   syncPolicy:
