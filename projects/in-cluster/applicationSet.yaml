@@ -20,7 +20,7 @@ spec:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
           revision: apps-for-days
           directories:
-          - path: charts/tracer/*
+          - path: clusters/tracer/*
   template:
     metadata:
       name: '{{ name }}-{{ path.basenameNormalized }}'
