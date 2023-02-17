@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cert-manager
+  namespace: argocd
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          env: dev
+  - git:
+      repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
+      revision: HEAD
+      directories:
+      - path: projects/tracer/
+  template:
+    metadata:
+      name: tracer
+    spec:
+      project: tracer
+      source:
+        repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: '{{url}}'
+        namespace: guestbook
