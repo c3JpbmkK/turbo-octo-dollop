@@ -1,12 +1,1 @@
-# Values file for ingress-nginx
-
-nginx:
-  defaultBackend:
-    enabled: true
-  controller:
-    autoscaling:
-      enabled: true
-      maxReplicas: 5
-      minReplicas: 1
-      targetCPUUtilizationPercentage: 50
-      targetMemoryUtilizationPercentage: 50
+# Values file for jaeger

@@ -1,15 +1,32 @@
 apiVersion: v2
 version: "0.0.1"
-name: ingress-nginx
-description: Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer
+name: jaeger
+description: A Jaeger Helm chart for Kubernetes
 home: https://github.com/kubernetes/ingress-nginx
 keywords:
-  - ingress
-  - nginx
+  - jaeger
+  - opentracing
+  - tracing
+  - instrumentation
 sources:
-  - https://github.com/kubernetes/ingress-nginx
+    - https://hub.docker.com/u/jaegertracing/
 dependencies:
-  - name: ingress-nginx
-    alias: nginx
-    version: "4.5.2"
-    repository: "https://kubernetes.github.io/ingress-nginx"
+  - name: jaeger
+    alias: jaeger
+    version: "0.67.2"
+    repository: "https://jaegertracing.github.io/helm-charts"
+  - name: cassandra
+    version: 0.15.3
+    repository: https://charts.helm.sh/incubator
+    condition: jaeger.provisionDataStore.cassandra
+  - name: elasticsearch
+    version: ^7.11.1
+    repository: https://helm.elastic.co
+    condition: jaeger.provisionDataStore.elasticsearch
+  - name: kafka
+    version: ^19.1.5
+    repository: https://charts.bitnami.com/bitnami
+    condition: jaeger.provisionDataStore.kafka
+  - name: common
+    repository: https://charts.bitnami.com/bitnami
+    version: 1.16.0
