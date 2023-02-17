@@ -35,4 +35,6 @@ spec:
     kind: 'ValidatingWebhookConfiguration'
     name: tracer-certmanager-cert-manager-webhook
     jsonPointers:
-    - /webhooks #/*/namespaceSelector/matchExpressions/*
+    # chore: identify if we can exactly ignore the following instead of everything under webhooks
+    # /webhooks/0/namespaceSelector/matchExpressions/2
+    - /webhooks/0/namespaceSelector/matchExpressions/2 
