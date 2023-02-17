@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tracer-nginx
+  namespace: argocd
+  # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: tracer
+  source:
+    repoURL: 'https://kubernetes.github.io/ingress-nginx'
+    targetRevision: '4.5.2'
+    chart: jaeger-system
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    name: tracer
+    namespace: nginx
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+    # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
+    - PrunePropagationPolicy=foreground
+    automated:
+      prune: true
+      selfHeal: true
