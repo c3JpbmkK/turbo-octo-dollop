@@ -9,10 +9,13 @@ spec:
       generators:
       - clusters:
           selector:
-            matchLabels:
-              tenant: liquid-reply
-        values:
-          region: westeurope
+            matchExpressions:
+              - key: tenant
+                operator: In
+                values:
+                  - liquid-reply
+          values:
+            region: westeurope
       - git:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
           revision: main
@@ -20,25 +23,25 @@ spec:
           - path: charts/tracer/*
   template:
     metadata:
-      name: "{{ name }}-{{ path.basenameNormalized }}"
+      name: '{{ name }}-{{ path.basenameNormalized }}'
       labels:
-        app: "{{ path.basenameNormalized }}"
-        cluster: "{{ name }}"
-        topology.kubernetes.io/region: "{{ values.region }}"
+        app: '{{ path.basenameNormalized }}'
+        cluster: '{{ name }}'
+        topology.kubernetes.io/region: '{{ values.region }}'
       finalizers:
         - resources-finalizer.argocd.argoproj.io
     spec:
-      project: "{{ name }}"
+      project: '{{ name }}'
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: main
-        path: "charts/{{ name }}/{{ path.basenameNormalized }}"
+        path: 'charts/{{ name }}/{{ path.basenameNormalized }}'
         helm:
           valueFiles:
             - values.yaml
       destination:
-        name: "{{ name }}"
-        namespace: "{{ path.basenameNormalized }}"
+        name: '{{ name }}'
+        namespace: '{{ path.basenameNormalized }}'
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
