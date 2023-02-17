@@ -23,8 +23,17 @@ argocd login --username admin --password "$ARGOCD_INITIAL_ADMIN_SECRET" 2>/dev/n
 
 ## Add cluster to local argocd intance
 argocd cluster list 2>/dev/null || writeError
-echo "Using context mega-featsrini-kubernetes-admin"
-argocd cluster add --yes --kubeconfig /home/srini/.kube/config mega-featsrini-kubernetes-admin 
-
-## Customize local argocd instance
-argocd proj create
+CURRENT_CONTEXT=$(kubectl config current-context)
+echo "Current context is ${CURRENT_CONTEXT}"
+read -p "Add ${CURRENT_CONTEXT} to argocd clusters (y/n)? " confirm
+case $confirm in
+    y|Y)
+        echo "Adding cluster ${CURRENT_CONTEXT}"
+        argocd cluster add --yes --kubeconfig /home/srini/.kube/config ${CURRENT_CONTEXT}
+        ;;
+    n|N)
+        echo "Skipping cluster ${CURRENT_CONTEXT}"
+        ;;
+    *)
+        echo "Please enter y|Y or n|N" ;;
+esac
