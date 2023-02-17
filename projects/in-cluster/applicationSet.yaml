@@ -13,7 +13,7 @@ spec:
               tenant: liquid-reply
       - git:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-          revision: HEAD
+          revision: main
           directories:
           - path: clusters/tracer/*
   template:
@@ -23,8 +23,11 @@ spec:
       project: "{{name}}"
       source:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-        targetRevision: HEAD
+        targetRevision: main
         path: "clusters/{{name}}/{{path.basenameNormalized}}"
+        helm:
+        - valueFiles:
+          - https://github.com/c3JpbmkK/turbo-octo-dollop/blob/main/clusters/tracer/cert-manager/values.yaml
       destination:
         name: in-cluster
         namespace: argocd
