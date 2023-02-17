@@ -24,7 +24,7 @@ spec:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
           revision: 3-apps
           directories:
-          - path: apps/cert-manager
+          - path: apps/*
   template:
     metadata:
       name: '{{ name }}-{{ path.basenameNormalized }}'
