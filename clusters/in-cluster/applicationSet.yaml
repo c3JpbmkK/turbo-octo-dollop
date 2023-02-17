@@ -49,18 +49,7 @@ spec:
         - ApplyOutOfSyncOnly=true
         # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
         - PrunePropagationPolicy=foreground
-        # chore: This options is only because of a wonky cert-manager webhook
-        # chore: Find out if it can be fixed/adjusted to not be wonky
-        - RespectIgnoreDifferences=true
         automated:
           prune: true
           selfHeal: true
           allowEmpty: true
-      ignoreDifferences:
-        - group: 'admissionregistration.k8s.io'
-          kind: 'ValidatingWebhookConfiguration'
-          name: tracer-cert-manager-certmanager-webhook
-          jsonPointers:
-          # chore: identify if we can exactly ignore the following instead of everything under webhooks
-          # /webhooks/0/namespaceSelector/matchExpressions/2
-          - /webhooks
