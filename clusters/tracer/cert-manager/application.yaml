@@ -14,7 +14,7 @@ spec:
     chart: cert-manager
     helm:
       parameters:
-        installCRDs: true
+        - installCRDs: true
   destination:
     name: tracer
     namespace: cert-manager
