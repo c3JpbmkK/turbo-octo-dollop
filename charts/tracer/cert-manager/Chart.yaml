@@ -14,4 +14,5 @@ sources:
 dependencies:
   - name: cert-manager
     version: "v1.11.0"
-    repository: https://charts.jetstack.io
+    repository: "https://charts.jetstack.io"
+    alias: certmanager
