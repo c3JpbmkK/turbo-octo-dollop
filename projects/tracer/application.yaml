@@ -12,6 +12,10 @@ spec:
     repoURL: 'https://charts.jetstack.io'
     targetRevision: v1.11.0
     chart: cert-manager
+    helm:
+      parameters:
+      - name: "crds.install"
+        value: "true"
   sources: []
   project: tracer
   syncPolicy:
