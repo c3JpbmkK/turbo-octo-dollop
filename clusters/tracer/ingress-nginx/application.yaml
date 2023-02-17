@@ -15,7 +15,7 @@ spec:
     chart: ingress-nginx
     helm:
       valueFiles:
-        - ./values.yaml
+        - https://github.com/c3JpbmkK/turbo-octo-dollop/blob/apps-for-days/clusters/tracer/ingress-nginx/values.yaml
   destination:
     name: tracer
     namespace: nginx
