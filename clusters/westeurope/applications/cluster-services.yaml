@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: tracer-application-set
+  name: westeurope-applicationset
   namespace: argocd
 spec:
   generators:
