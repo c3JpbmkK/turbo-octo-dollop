@@ -33,4 +33,4 @@ spec:
   - group: 'admissionregistration.k8s.io'
     kind: 'ValidatingWebhookConfiguration'
     jsonPointers:
-    - /webhooks/ #*/admissionReviewVersions/namespaceSelector
+    - /webhooks #*/admissionReviewVersions/namespaceSelector
