@@ -14,7 +14,7 @@ spec:
     chart: cert-manager
     helm:
       parameters:
-      - name: "installCRDS"
+      - name: "installCRDs"
         value: "true"
   sources: []
   project: tracer
