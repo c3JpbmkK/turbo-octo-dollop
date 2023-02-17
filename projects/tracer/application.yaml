@@ -4,17 +4,15 @@ metadata:
   name: cert-manager
 spec:
   destination:
-    name: ''
-    namespace: custom-cert-manager
-    server: >-
-      https://featsrini:6443
+    name: tracer
+    namespace: cert-manager
   source:
     path: ''
     repoURL: 'https://charts.jetstack.io'
     targetRevision: v1.11.0
     chart: cert-manager
   sources: []
-  project: featsrini
+  project: tracer
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
