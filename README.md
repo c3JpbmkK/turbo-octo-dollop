@@ -1,4 +1,4 @@
-# turbo-octo-dollop.
+# turbo-octo-dollop
 
 ```bash
 tree --dirsfirst >> README.md
