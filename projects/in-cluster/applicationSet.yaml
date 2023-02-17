@@ -25,10 +25,7 @@ spec:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: HEAD
         path: "clusters/{{name}}/{{path.basenameNormalized}}"
-        # directory:
-        #   recurse: true
       destination:
-        # Which cluster to deploy the application.argoproj.io
         name: in-cluster
         namespace: argocd
       syncPolicy:
