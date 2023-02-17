@@ -25,6 +25,9 @@ spec:
         repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
         targetRevision: main
         path: "charts/{{name}}/{{path.basenameNormalized}}"
+        # helm:
+        #   valueFiles:
+        #   - "https://github.com/c3JpbmkK/turbo-octo-dollop/blob/main/charts/tracer/cert-manager/values.yaml"
       destination:
         name: "{{name}}"
         namespace: "{{path.basenameNormalized}}"
