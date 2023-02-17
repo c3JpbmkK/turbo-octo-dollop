@@ -1,1 +1,4 @@
 # Values file for jaeger
+
+jaeger:
+  hotel: trivago
