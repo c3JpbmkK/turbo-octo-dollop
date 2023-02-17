@@ -15,7 +15,7 @@ spec:
     chart: cert-manager
     helm:
       valueFiles:
-      - values.yaml
+      - https://github.com/c3JpbmkK/turbo-octo-dollop/blob/main/clusters/tracer/cert-manager/values.yaml
   destination:
     name: tracer
     namespace: cert-manager
