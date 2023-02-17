@@ -9,7 +9,6 @@ metadata:
 spec:
   project: tracer
   source:
-    path: ''
     repoURL: 'https://charts.jetstack.io'
     targetRevision: v1.11.0
     chart: cert-manager
