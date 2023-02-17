@@ -1,7 +1,7 @@
 # turbo-octo-dollop.
 
 ```bash
-tree
+tree --dirsfirst >> README.md
 .
 ├── clusters
 │   └── tracer
@@ -11,13 +11,13 @@ tree
 │       └── ingress-nginx
 │           ├── application.yaml
 │           └── values.yaml
-├── kill-port-forward.sh
-├── nohup.out
-├── port-forward.sh
 ├── projects
 │   └── in-cluster
 │       ├── applicationSet.yaml
 │       └── appproject.yaml
+├── kill-port-forward.sh
+├── nohup.out
+├── port-forward.sh
 ├── README.md
 ├── setup.sh
 └── teardown.sh
