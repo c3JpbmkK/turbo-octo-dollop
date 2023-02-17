@@ -15,7 +15,7 @@ spec:
     helm:
       parameters:
         - name: installCRDs
-          value: true
+          value: 'true'
           forceString: true
   destination:
     name: tracer
