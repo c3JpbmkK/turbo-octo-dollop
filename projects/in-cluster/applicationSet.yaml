@@ -18,7 +18,7 @@ spec:
           - path: clusters/tracer/*
   template:
     metadata:
-      name: "{{name}}-applicationset-{{path.basenameNormalized}}"
+      name: "{{name}}-{{path.basenameNormalized}}"
     spec:
       project: "{{name}}"
       source:
@@ -26,8 +26,8 @@ spec:
         targetRevision: main
         path: "charts/{{name}}/{{path.basenameNormalized}}"
       destination:
-        name: in-cluster
-        namespace: argocd
+        name: "{{name}}"
+        namespace: "{{path.basenameNormalized}}"
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
