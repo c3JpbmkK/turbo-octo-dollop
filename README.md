@@ -6,21 +6,18 @@ tree --dirsfirst >> README.md
 ├── clusters
 │   └── tracer
 │       ├── cert-manager
-│       │   ├── application.yaml
-│       │   └── values.yaml
+│       │   └── application.yaml
 │       └── ingress-nginx
-│           ├── application.yaml
-│           └── values.yaml
+│           └── application.yaml
 ├── projects
 │   └── in-cluster
 │       ├── applicationSet.yaml
 │       └── appproject.yaml
 ├── kill-port-forward.sh
-├── nohup.out
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
 └── teardown.sh
 
-7 directories, 12 files
+7 directories, 9 files
 ```
