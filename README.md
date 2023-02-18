@@ -10,6 +10,9 @@ tree --dirsfirst >> README.md
 │   ├── cert-manager
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
+│   ├── crossplane
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
 │   └── ingress-nginx
 │       ├── clusters
 │       │   ├── in-cluster
@@ -47,5 +50,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-22 directories, 22 files
+23 directories, 24 files
 ```
