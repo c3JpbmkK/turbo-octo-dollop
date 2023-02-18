@@ -14,7 +14,7 @@ spec:
     path: charts/ingress-nginx
     helm:
       valueFiles:
-        - ../values-ingress-nginx.yaml
+        - values-ingress-nginx.yaml
   destination:
     name: tracer
     namespace: ingress-nginx

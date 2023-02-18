@@ -9,11 +9,8 @@ tree --dirsfirst >> README.md
 ├── hubs
 │   └── in-cluster
 │       ├── template
-│       │   ├── templates
-│       │   │   └── ingress-nginx.yaml
-│       │   ├── Chart.yaml
-│       │   ├── values-ingress-nginx.yaml
-│       │   └── values.yaml
+│       │   ├── application-ingress-nginx.yaml
+│       │   └── values-ingress-nginx.yaml
 │       └── application.yaml
 ├── projects
 │   ├── cariad.yaml
@@ -28,5 +25,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-9 directories, 16 files
+8 directories, 14 files
 ```
