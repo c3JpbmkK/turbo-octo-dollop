@@ -15,10 +15,11 @@ tree --dirsfirst >> README.md
 │           └── applications
 │               └── cluster-services.yaml
 ├── kill-port-forward.sh
+├── nohup.out
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
 └── teardown.sh
 
-7 directories, 10 files
+7 directories, 11 files
 ```

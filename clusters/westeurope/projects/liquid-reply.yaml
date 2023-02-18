@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: liquid-reply
+  namespace: argocd
+spec:
+  sourceRepos:
+  - '*'
+  destinations:
+    - namespace: '*'
+      server: https://visual-dns-9a444610.hcp.eastus2.azmk8s.io:443
+    - namespace: '*'
+      server: https://tracer-90b31e5e.hcp.westeurope.azmk8s.io:443
+    - namespace: '*'
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'

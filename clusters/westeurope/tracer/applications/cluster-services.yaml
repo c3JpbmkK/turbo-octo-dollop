@@ -18,10 +18,10 @@ spec:
                 operator: In
                 values:
                   - dev
-              - key: name
-                operator: In
-                values:
-                  - tracer
+              # - key: name
+              #   operator: In
+              #   values:
+              #     - tracer
           values:
             region: westeurope
       - git:
