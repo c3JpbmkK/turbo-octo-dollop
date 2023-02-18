@@ -27,8 +27,8 @@ tree --dirsfirst >> README.md
 │   ├── in-cluster
 │   │   ├── templates
 │   │   │   └── 00-application-ingress-nginx.yaml
-│   │   ├── 00-project.yaml
-│   │   └── 01-application.yaml
+│   │   ├── application.yaml
+│   │   └── project.yaml
 │   └── visual
 ├── manifests
 │   ├── base
