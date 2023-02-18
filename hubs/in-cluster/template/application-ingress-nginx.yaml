@@ -10,7 +10,7 @@ spec:
   project: tracer
   source:
     repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
-    targetRevision: '5-apps'
+    targetRevision: '5-mono'
     path: charts/ingress-nginx
     helm:
       valueFiles:

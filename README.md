@@ -3,15 +3,34 @@
 ```bash
 tree --dirsfirst >> README.md
 .
+├── charts
+│   ├── argocd
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
+│   ├── cert-manager
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
+│   └── ingress-nginx
+│       ├── clusters
+│       │   └── tracer
+│       │       └── values.yaml
+│       ├── Chart.yaml
+│       └── values.yaml
 ├── clusters
 │   ├── tracer
 │   └── visual
 ├── hubs
 │   └── in-cluster
 │       ├── template
-│       │   ├── application-ingress-nginx.yaml
-│       │   └── values-ingress-nginx.yaml
+│       │   └── application-ingress-nginx.yaml
 │       └── application.yaml
+├── manifests
+│   ├── base
+│   └── overlays
+│       ├── dev
+│       ├── int
+│       ├── prod
+│       └── test
 ├── projects
 │   ├── cariad.yaml
 │   ├── featsrini.yaml
@@ -25,5 +44,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-8 directories, 14 files
+21 directories, 20 files
 ```
