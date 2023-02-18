@@ -21,8 +21,7 @@ tree --dirsfirst >> README.md
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
-├── teardown.sh
-└── testfile
+└── teardown.sh
 
-7 directories, 14 files
+7 directories, 13 files
 ```
