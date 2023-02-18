@@ -8,7 +8,9 @@ tree --dirsfirst >> README.md
 │       ├── applications
 │       │   └── cluster-services.yaml
 │       ├── projects
+│       │   ├── cariad.yaml
 │       │   ├── featsrini.yaml
+│       │   ├── liquid-reply.yaml
 │       │   ├── tracer.yaml
 │       │   └── visual.yaml
 │       └── tracer
@@ -19,7 +21,8 @@ tree --dirsfirst >> README.md
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
-└── teardown.sh
+├── teardown.sh
+└── testfile
 
-7 directories, 11 files
+7 directories, 14 files
 ```
