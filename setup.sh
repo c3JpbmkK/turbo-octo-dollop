@@ -32,10 +32,10 @@ argocd cluster list 2>/dev/null || writeError
 
 ## Add multiple clusters to local argocd instance
 echo "Adding cluster tracer-admin"
-argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "tracer" "tracer-admin" 2>/dev/null
+argocd cluster add --yes --upsert --kubeconfig /home/"${HOST_USER}"/.kube/config --name "tracer" --label env=dev --label name=tracer --label tenant=liquid-reply "tracer-admin" #2>/dev/null
 
 echo "Adding cluster visual-admin"
-argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "visual" "visual-admin" 2>/dev/null
+argocd cluster add --yes --upsert --kubeconfig /home/"${HOST_USER}"/.kube/config --name "visual" --label env=dev --label name=visual --label tenant=liquid-reply "visual-admin" 2>/dev/null
 
 echo "Adding cluster mega-featsrini-kubernetes-admin"
-argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "featsrini" "mega-featsrini-kubernetes-admin" 2>/dev/null
+argocd cluster add --yes --upsert --kubeconfig /home/"${HOST_USER}"/.kube/config --name "featsrini" --label env=dev --label name=featsrini --label tenant=cariad "mega-featsrini-kubernetes-admin" 2>/dev/null

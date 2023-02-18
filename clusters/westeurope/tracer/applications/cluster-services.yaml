@@ -14,17 +14,23 @@ spec:
                 operator: In
                 values:
                   - liquid-reply
+              - key: env
+                operator: In
+                values:
+                  - dev
               - key: name
                 operator: In
                 values:
                   - tracer
-            values:
+          values:
             region: westeurope
       - git:
           repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
           revision: 3-apps
           directories:
           - path: apps/*
+          # - path: apps/jaeger
+          #   exclude: true
   template:
     metadata:
       name: '{{ name }}-{{ path.basenameNormalized }}'
