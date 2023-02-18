@@ -22,11 +22,10 @@ tree --dirsfirst >> README.md
 │   ├── tracer.yaml
 │   └── visual.yaml
 ├── kill-port-forward.sh
-├── nohup.out
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
 └── teardown.sh
 
-9 directories, 16 files
+9 directories, 15 files
 ```

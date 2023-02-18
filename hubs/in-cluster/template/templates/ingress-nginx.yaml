@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tracer-nginx
+  namespace: argocd
+  # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: tracer
+  source:
+    repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+    targetRevision: '5-apps'
+    chart: ingress-nginx
+  destination:
+    name: tracer
+    namespace: ingress-nginx
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+    # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
+    - PrunePropagationPolicy=foreground
+    automated:
+      prune: true
+      selfHeal: true
