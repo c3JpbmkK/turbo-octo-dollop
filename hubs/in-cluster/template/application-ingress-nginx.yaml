@@ -12,9 +12,9 @@ spec:
     repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
     targetRevision: '5-apps'
     path: charts/ingress-nginx
-    helm:
-      valueFiles:
-        - values-ingress-nginx.yaml
+    # helm:
+    #   valueFiles:
+    #     - values.yaml
   destination:
     name: tracer
     namespace: ingress-nginx
