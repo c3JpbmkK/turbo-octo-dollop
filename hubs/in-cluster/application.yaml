@@ -12,7 +12,6 @@ spec:
     repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
     path: 'hubs/in-cluster/template'
     targetRevision: 5-mono
-    chart: in-cluster
   destination:
     name: in-cluster
     namespace: in-cluster

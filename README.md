@@ -3,16 +3,6 @@
 ```bash
 tree --dirsfirst >> README.md
 .
-├── apps
-│   ├── argocd
-│   │   ├── Chart.yaml
-│   │   └── values.yaml
-│   ├── cert-manager
-│   │   ├── Chart.yaml
-│   │   └── values.yaml
-│   └── ingress-nginx
-│       ├── Chart.yaml
-│       └── values.yaml
 ├── clusters
 │   ├── tracer
 │   └── visual
@@ -20,6 +10,7 @@ tree --dirsfirst >> README.md
 │   └── in-cluster
 │       ├── template
 │       │   ├── templates
+│       │   │   └── ingress-nginx.yaml
 │       │   ├── Chart.yaml
 │       │   └── values.yaml
 │       └── application.yaml
@@ -44,5 +35,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-20 directories, 21 files
+16 directories, 16 files
 ```
