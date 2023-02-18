@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tracer-nginx
+  name: in-cluster-nginx
   namespace: argocd
   # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: tracer
+  project: in-cluster
   source:
     repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
     targetRevision: '5-mono'
@@ -15,9 +15,9 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - clusters/tracer/values.yaml
+        - clusters/in-cluster/values.yaml
   destination:
-    name: tracer
+    name: in-cluster
     namespace: ingress-nginx
   syncPolicy:
     syncOptions:

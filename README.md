@@ -12,6 +12,8 @@ tree --dirsfirst >> README.md
 │   │   └── values.yaml
 │   └── ingress-nginx
 │       ├── clusters
+│       │   ├── in-cluster
+│       │   │   └── values.yaml
 │       │   └── tracer
 │       │       └── values.yaml
 │       ├── Chart.yaml
@@ -44,5 +46,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-21 directories, 20 files
+22 directories, 21 files
 ```
