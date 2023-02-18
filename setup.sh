@@ -36,3 +36,6 @@ argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "
 
 echo "Adding cluster visual-admin"
 argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "visual" "visual-admin" 2>/dev/null
+
+echo "Adding cluster mega-featsrini-kubernetes-admin"
+argocd cluster add --yes --kubeconfig /home/"${HOST_USER}"/.kube/config --name "featsrini" "mega-featsrini-kubernetes-admin" 2>/dev/null

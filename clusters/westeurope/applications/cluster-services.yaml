@@ -15,10 +15,10 @@ spec:
         - clusters:
             selector:
               matchExpressions:
-                - key: tenant
-                  operator: In
-                  values:
-                    - liquid-reply
+                # - key: tenant
+                #   operator: In
+                #   values:
+                #     - liquid-reply
                 - key: env
                   operator: In
                   values:
