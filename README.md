@@ -16,11 +16,10 @@ tree --dirsfirst >> README.md
 │       ├── applicationSet.yaml
 │       └── appproject.yaml
 ├── kill-port-forward.sh
-├── nohup.out
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
 └── teardown.sh
 
-7 directories, 12 files
+7 directories, 11 files
 ```
