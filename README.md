@@ -23,8 +23,9 @@ tree --dirsfirst >> README.md
 ├── hubs
 │   ├── in-cluster
 │   │   ├── templates
-│   │   │   └── application-ingress-nginx.yaml
-│   │   └── application.yaml
+│   │   │   └── 00-application-ingress-nginx.yaml
+│   │   ├── 00-project.yaml
+│   │   └── 01-application.yaml
 │   └── visual
 ├── manifests
 │   ├── base
@@ -46,5 +47,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-22 directories, 21 files
+22 directories, 22 files
 ```
