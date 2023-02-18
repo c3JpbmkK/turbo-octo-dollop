@@ -14,6 +14,7 @@ spec:
   ttlSecondsAfterFinished: 10
   template:
     spec:
+      automountServiceAccountToken: true
       containers:
       - name: kubectl
         image: bitnami/kubectl:1.24.9
@@ -22,3 +23,4 @@ spec:
           - -c
           - kubectl
       restartPolicy: Never
+      
