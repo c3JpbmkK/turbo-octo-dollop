@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: update-dns-record-job
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    helm.sh/hook: post-install
+spec:
+  parallelism: 1
+  completions: 1
+  backoffLimit: 1
+  ttlSecondsAfterFinished: 10
+  template:
+    spec:
+      containers:
+      - name: kubectl
+        image: bitnami/kubectl:1.24.9
+        args:
+          - sh
+          - -c
+          - kubectl
+      restartPolicy: Never

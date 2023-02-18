@@ -21,6 +21,8 @@ tree --dirsfirst >> README.md
 │       │   │   └── values.yaml
 │       │   └── visual
 │       │       └── values.yaml
+│       ├── templates
+│       │   └── update-dns-record-job.yaml
 │       ├── Chart.yaml
 │       └── values.yaml
 ├── clusters
@@ -62,5 +64,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-25 directories, 34 files
+26 directories, 35 files
 ```
