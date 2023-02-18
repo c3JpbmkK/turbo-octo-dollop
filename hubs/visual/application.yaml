@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: visual
+  namespace: argocd
+  # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: visual
+  source:
+    repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+    path: 'hubs/visual/templates'
+    targetRevision: 5-mono
+  destination:
+    name: in-cluster
+    namespace: visual
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+    # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
+    - PrunePropagationPolicy=foreground
+    automated:
+      prune: true
+      selfHeal: true

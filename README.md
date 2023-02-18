@@ -17,7 +17,9 @@ tree --dirsfirst >> README.md
 │       ├── clusters
 │       │   ├── in-cluster
 │       │   │   └── values.yaml
-│       │   └── tracer
+│       │   ├── tracer
+│       │   │   └── values.yaml
+│       │   └── visual
 │       │       └── values.yaml
 │       ├── Chart.yaml
 │       └── values.yaml
@@ -33,6 +35,13 @@ tree --dirsfirst >> README.md
 │   │   ├── application.yaml
 │   │   └── project.yaml
 │   └── visual
+│       ├── templates
+│       │   ├── 00-application-ingress-nginx.yaml
+│       │   ├── 01-application-cert-manager.yaml
+│       │   ├── 02-application-argocd.yaml
+│       │   └── 03-application-crossplane.yaml
+│       ├── application.yaml
+│       └── project.yaml
 ├── manifests
 │   ├── base
 │   └── overlays
@@ -53,5 +62,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-23 directories, 27 files
+25 directories, 34 files
 ```

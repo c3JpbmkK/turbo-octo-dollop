@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: visual-crossplane
+  namespace: argocd
+  # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: visual
+  source:
+    repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+    targetRevision: '5-mono'
+    path: charts/crossplane
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    name: visual
+    namespace: crossplane
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+    # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
+    - PrunePropagationPolicy=foreground
+    automated:
+      prune: true
+      selfHeal: true
