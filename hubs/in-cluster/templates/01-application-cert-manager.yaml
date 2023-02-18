@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: in-cluster-nginx
+  name: in-cluster-cert-manager
   namespace: argocd
   # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
   finalizers:
@@ -11,14 +11,13 @@ spec:
   source:
     repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
     targetRevision: '5-mono'
-    path: charts/ingress-nginx
+    path: charts/cert-manager
     helm:
       valueFiles:
         - values.yaml
-        - clusters/in-cluster/values.yaml
   destination:
     name: in-cluster
-    namespace: ingress-nginx
+    namespace: cert-manager
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
