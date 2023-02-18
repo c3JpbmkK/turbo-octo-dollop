@@ -5,8 +5,14 @@ tree --dirsfirst >> README.md
 .
 ├── apps
 │   ├── argocd
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
 │   ├── cert-manager
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
 │   └── ingress-nginx
+│       ├── Chart.yaml
+│       └── values.yaml
 ├── clusters
 │   ├── tracer
 │   └── visual
@@ -22,5 +28,5 @@ tree --dirsfirst >> README.md
 ├── nohup.out
 └── README.md
 
-17 directories, 2 files
+17 directories, 8 files
 ```
