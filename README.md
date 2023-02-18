@@ -10,9 +10,9 @@ tree --dirsfirst >> README.md
 │   └── in-cluster
 │       ├── template
 │       │   ├── templates
-│       │   │   ├── ingress-nginx.yaml
-│       │   │   └── values-ingress-nginx.yaml
+│       │   │   └── ingress-nginx.yaml
 │       │   ├── Chart.yaml
+│       │   ├── values-ingress-nginx.yaml
 │       │   └── values.yaml
 │       └── application.yaml
 ├── projects
