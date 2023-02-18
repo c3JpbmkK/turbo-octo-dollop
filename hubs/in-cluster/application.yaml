@@ -10,7 +10,7 @@ spec:
   project: in-cluster
   source:
     repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
-    path: 'hubs/in-cluster/template'
+    path: 'hubs/in-cluster/templates'
     targetRevision: 5-mono
   destination:
     name: in-cluster

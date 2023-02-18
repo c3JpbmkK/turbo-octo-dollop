@@ -19,13 +19,13 @@ tree --dirsfirst >> README.md
 │       ├── Chart.yaml
 │       └── values.yaml
 ├── clusters
-│   ├── tracer
-│   └── visual
+│   └── tracer
 ├── hubs
-│   └── in-cluster
-│       ├── template
-│       │   └── application-ingress-nginx.yaml
-│       └── application.yaml
+│   ├── in-cluster
+│   │   ├── templates
+│   │   │   └── application-ingress-nginx.yaml
+│   │   └── application.yaml
+│   └── visual
 ├── manifests
 │   ├── base
 │   └── overlays
