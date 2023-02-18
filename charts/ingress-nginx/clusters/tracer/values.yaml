@@ -2,7 +2,7 @@
 
 nginx:
   defaultBackend:
-    enabled: false
+    enabled: true
   controller:
     resources:
       limits:
