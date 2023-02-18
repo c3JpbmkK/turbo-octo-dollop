@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: in-cluster-nginx
+  namespace: argocd
+  # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: in-cluster
+  source:
+    repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+    targetRevision: '5-mono'
+    path: charts/ingress-nginx
+    helm:
+      valueFiles:
+        - values.yaml
+        - clusters/in-cluster/values.yaml
+  destination:
+    name: in-cluster
+    namespace: ingress-nginx
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+    # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
+    - PrunePropagationPolicy=foreground
+    automated:
+      prune: true
+      selfHeal: true
