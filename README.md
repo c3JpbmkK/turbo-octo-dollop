@@ -14,13 +14,6 @@ tree --dirsfirst >> README.md
 │       │   ├── Chart.yaml
 │       │   └── values.yaml
 │       └── application.yaml
-├── manifests
-│   ├── base
-│   └── overlays
-│       ├── dev
-│       ├── int
-│       ├── prod
-│       └── test
 ├── projects
 │   ├── cariad.yaml
 │   ├── featsrini.yaml
@@ -35,5 +28,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-16 directories, 16 files
+9 directories, 16 files
 ```
