@@ -10,7 +10,8 @@ tree --dirsfirst >> README.md
 │   └── in-cluster
 │       ├── template
 │       │   ├── templates
-│       │   │   └── ingress-nginx.yaml
+│       │   │   ├── ingress-nginx.yaml
+│       │   │   └── values-ingress-nginx.yaml
 │       │   ├── Chart.yaml
 │       │   └── values.yaml
 │       └── application.yaml
@@ -27,5 +28,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-9 directories, 15 files
+9 directories, 16 files
 ```
