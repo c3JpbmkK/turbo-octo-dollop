@@ -7,24 +7,24 @@ spec:
   generators:
   - matrix:
       generators:
-      - clusters:
-          selector:
-            matchExpressions:
-              - key: tenant
-                operator: In
-                values:
-                  - liquid-reply
-              - key: env
-                operator: In
-                values:
-                  - dev
-          values:
-            region: westeurope
-      - git:
-          repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
-          revision: 3-apps
-          directories:
-          - path: apps/*
+        - git:
+            repoURL: https://github.com/c3JpbmkK/turbo-octo-dollop.git
+            revision: 3-apps
+            directories:
+            - path: apps/*
+        - clusters:
+            selector:
+              matchExpressions:
+                - key: tenant
+                  operator: In
+                  values:
+                    - liquid-reply
+                - key: env
+                  operator: In
+                  values:
+                    - dev
+            values:
+              region: westeurope
   template:
     metadata:
       name: '{{ name }}-{{ path.basenameNormalized }}'
