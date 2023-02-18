@@ -8,7 +8,7 @@ spec:
   - '*'
   destinations:
   - namespace: '*'
-    server: https://visual-dns-9a444610.hcp.eastus2.azmk8s.io
+    server: https://visual-dns-9a444610.hcp.eastus2.azmk8s.io:443
   - namespace: '*'
     server: https://kubernetes.default.svc
   clusterResourceWhitelist:
