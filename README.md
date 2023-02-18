@@ -18,6 +18,11 @@ tree --dirsfirst >> README.md
 │   └── visual
 ├── hubs
 │   └── in-cluster
+│       ├── template
+│       │   ├── templates
+│       │   ├── Chart.yaml
+│       │   └── values.yaml
+│       └── application.yaml
 ├── manifests
 │   ├── base
 │   └── overlays
@@ -32,5 +37,5 @@ tree --dirsfirst >> README.md
 ├── setup.sh
 └── teardown.sh
 
-17 directories, 12 files
+19 directories, 15 files
 ```
