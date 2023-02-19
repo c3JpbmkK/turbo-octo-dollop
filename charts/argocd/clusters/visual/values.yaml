@@ -11,6 +11,10 @@ argocd:
         cert-manager.io/cluster-issuer: visual-cert-manager-http01-clusterissuer
         acme.cert-manager.io/http01-ingress-class: nginx
         acme.cert-manager.io/http01-edit-in-place: "true"
+        kubernetes.io/ingress.class: nginx
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/ssl-passthrough: "true"
       ingressClassName: nginx
       hosts:
         - argocd.visual.clusters.sysctls.de
