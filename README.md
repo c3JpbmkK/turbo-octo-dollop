@@ -54,13 +54,6 @@ tree --dirsfirst >> README.md
 │       ├── int
 │       ├── prod
 │       └── test
-├── projects
-│   ├── cariad.yaml
-│   ├── featsrini.yaml
-│   ├── in-cluster.yaml
-│   ├── liquid-reply.yaml
-│   ├── tracer.yaml
-│   └── visual.yaml
 ├── kill-port-forward.sh
 ├── nohup.out
 ├── port-forward.sh
@@ -69,5 +62,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-26 directories, 40 files
+25 directories, 34 files
 ```
