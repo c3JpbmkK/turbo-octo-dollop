@@ -26,6 +26,8 @@ spec:
       - name: azure-cli
         image: mcr.microsoft.com/azure-cli:latest
         env:
+          - name: DNS_ZONE_SUBSCRIPTION
+            value: '{{ .Values.dnsZoneSubscription }}'
           - name: DNS_ZONE_CONTRIBUTOR_IDENTITY
             value: '{{ .Values.dnsZoneContributorIdentity }}'
           - name: CLUSTER_TENANT
@@ -51,6 +53,7 @@ spec:
 
             # Login
             az login --service-principal -u "$DNS_ZONE_CONTRIBUTOR_IDENTITY" -t "$CLUSTER_TENANT" --federated-token $(cat /var/run/secrets/azure/tokens/azure-identity-token)
+            az account set -s "$DNS_ZONE_SUBSCRIPTION" # chore: remove this line if design is accepted
 
             # Get all A records from the A record set for the cluster domain
             EXISTING_A_RECORDS=$(az network dns record-set a show -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" --query aRecords --output tsv || echo)

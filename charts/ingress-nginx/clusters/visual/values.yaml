@@ -1,12 +1,10 @@
 # Values file for ingress-nginx
 
-# todo: Use correct cluster name
 clusterName: visual
 
 dnsZoneName: clusters.sysctls.de
-
 dnsZoneResourceGroup: dz-cluster
-
+dnsZoneSubscription: cf897062-5b9b-4b10-8897-6773333de4a4
 dnsZoneContributorIdentity: 0ea27f8c-6f3b-4f50-8002-ab01b6770d06
 dnsZoneContributorTenant: 8dd2b4a0-d0ce-44ca-b481-190c81849499
 
