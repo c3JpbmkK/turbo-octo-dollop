@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: visual
   namespace: argocd
+  labels:
+    application: visual
+    cluster: visual
+    topology.kubernetes.io/region: westeurope
   # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
   finalizers:
     - resources-finalizer.argocd.argoproj.io
