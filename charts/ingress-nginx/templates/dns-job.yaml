@@ -18,8 +18,15 @@ spec:
       serviceAccountName: '{{ .Release.Name }}-dns'
       automountServiceAccountToken: true
       containers:
-      - name: mcr.microsoft.com/azure-cli:latest
-        image: ub
+      - name: azure-cli
+        image: mcr.microsoft.com/azure-cli:latest
+        env:
+          - name: CLUSTER_NAME
+            value: '{{ .Values.clusterName }}'
+          - name: CLUSTER_DOMAIN
+            value: '{{ .Values.dnsZoneName }}'
+          - name: RESOURCE_GROUP
+            value: '{{ .Values.dnsZoneResourceGroup }}'
         command:
           - sh
           - -c
@@ -34,15 +41,15 @@ spec:
             LB_IP=$(echo "$Response" | jq -r '.items[]|select(.spec.type == "LoadBalancer").status.loadBalancer.ingress[].ip')
 
             # Get all A records from the A record set for the cluster domain
-            EXISTING_A_RECORDS=$(az network dns record-set a show -g "dz-cluster" -n tracer -z clusters.sysctls.de --query aRecords --output tsv || echo)
+            EXISTING_A_RECORDS=$(az network dns record-set a show -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" -z "$CLUSTER_DOMAIN" --query aRecords --output tsv || echo)
 
             # Remove outdated/manually added records
             for A_RECORD in $EXISTING_A_RECORDS; do
                 if [ "$A_RECORD" != "$LB_IP" ]; then
-                    echo az network dns record-set a remove-record -z "clusters.sysctls.de" -g "dz-cluster" -n "tracer" -a "$A_RECORD"
+                    echo az network dns record-set a remove-record -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" -a "$A_RECORD"
                 fi
             done
 
             # Add new record to the DNS zone
-            echo az network dns record-set a add-record -z "clusters.sysctls.de" -g "dz-cluster" -n "tracer" -a "$LB_IP"
+            echo az network dns record-set a add-record -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" -a "$LB_IP"
       restartPolicy: Never
