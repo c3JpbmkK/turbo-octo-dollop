@@ -1,7 +1,7 @@
 # Values file for argocd
 
-clusterName: visual
-clusterDomain: clusters.sysctls.de
+# clusterName: visual
+# clusterDomain: clusters.sysctls.de
 
 argocd:
   server:
@@ -11,4 +11,4 @@ argocd:
         cert-manager.io/cluster-issuer: visual-cert-manager-http01-clusterissuer
       ingressClassName: nginx
       hosts:
-        - visual.clusters.sysctls.de
+        - argocd.visual.clusters.sysctls.de
