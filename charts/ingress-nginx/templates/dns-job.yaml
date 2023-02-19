@@ -19,8 +19,6 @@ spec:
         azure.workload.identity/use: 'true'
       annotations:
         azure.workload.identity/use: 'true'
-        # azure.workload.identity/inject-proxy-sidecar: 'true'
-        # azure.workload.identity/proxy-sidecar-port: '8080'
     spec:
       serviceAccountName: '{{ .Release.Name }}-dns'
       automountServiceAccountToken: true
