@@ -15,7 +15,7 @@ spec:
   ttlSecondsAfterFinished: 10
   template:
     spec:
-      serviceAccountName: '{{ .Release.Name }}-dns-serviceaccount'
+      serviceAccountName: '{{ .Release.Name }}-dns'
       automountServiceAccountToken: true
       containers:
       - name: kubectl
