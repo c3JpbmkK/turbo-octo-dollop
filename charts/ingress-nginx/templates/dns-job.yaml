@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       annotations:
-        azure.workload.identity/inject-proxy-sidecar: true
+        azure.workload.identity/inject-proxy-sidecar: 'true'
         azure.workload.identity/proxy-sidecar-port: 8080
     spec:
       serviceAccountName: '{{ .Release.Name }}-dns'
