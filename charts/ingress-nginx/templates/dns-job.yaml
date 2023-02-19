@@ -19,7 +19,7 @@ spec:
         azure.workload.identity/use: 'true'
       labels:
         azure.workload.identity/use: 'true'
-      spec:
+    spec:
       serviceAccountName: '{{ .Release.Name }}-dns'
       automountServiceAccountToken: true
       containers:
