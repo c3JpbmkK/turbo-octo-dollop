@@ -24,7 +24,6 @@ tree --dirsfirst >> README.md
 │   │   ├── clusters
 │   │   │   └── visual
 │   │   │       └── values.yaml
-│   │   ├── templates
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   └── ingress-nginx
@@ -69,12 +68,11 @@ tree --dirsfirst >> README.md
 │       ├── prod
 │       └── test
 ├── kill-port-forward.sh
-├── nohup.out
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
 ├── teardown.sh
 └── workloadIdentity.sh
 
-34 directories, 39 files
+33 directories, 38 files
 ```
