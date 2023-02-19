@@ -14,6 +14,10 @@ spec:
   suspend: false
   ttlSecondsAfterFinished: 300
   template:
+    metadata:
+      annotations:
+        azure.workload.identity/inject-proxy-sidecar: true
+        azure.workload.identity/proxy-sidecar-port: 8080
     spec:
       serviceAccountName: '{{ .Release.Name }}-dns'
       automountServiceAccountToken: true
