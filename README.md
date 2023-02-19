@@ -22,7 +22,10 @@ tree --dirsfirst >> README.md
 │       │   └── visual
 │       │       └── values.yaml
 │       ├── templates
-│       │   └── update-dns-record-job.yaml
+│       │   ├── dns-job.yaml
+│       │   ├── dns-rolebinding.yaml
+│       │   ├── dns-role.yaml
+│       │   └── dns-serviceaccount.yaml
 │       ├── Chart.yaml
 │       └── values.yaml
 ├── clusters
@@ -59,10 +62,11 @@ tree --dirsfirst >> README.md
 │   ├── tracer.yaml
 │   └── visual.yaml
 ├── kill-port-forward.sh
+├── nohup.out
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
 └── teardown.sh
 
-26 directories, 35 files
+26 directories, 39 files
 ```
