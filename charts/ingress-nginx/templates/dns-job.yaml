@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: '{{ .Release.Name }}-dns-job'
+  name: '{{ .Release.Name }}-dns'
   namespace: '{{ .Release.Namespace }}'
   annotations:
     helm.sh/hook: post-install
@@ -15,7 +15,7 @@ spec:
   ttlSecondsAfterFinished: 10
   template:
     spec:
-      serviceAccountName: dns-serviceaccount
+      serviceAccountName: '{{ .Release.Name }}-dns-serviceaccount'
       automountServiceAccountToken: true
       containers:
       - name: kubectl
