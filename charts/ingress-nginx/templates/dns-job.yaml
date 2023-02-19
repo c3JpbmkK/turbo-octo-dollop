@@ -38,6 +38,7 @@ spec:
           - |
             #!/usr/bin/env bash
 
+            sleep inf
             # Setup kubectl cli
             az aks install-cli
 
