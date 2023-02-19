@@ -18,9 +18,31 @@ spec:
       serviceAccountName: '{{ .Release.Name }}-dns'
       automountServiceAccountToken: true
       containers:
-      - name: kubectl
-        image: bitnami/kubectl:1.24.9
+      - name: mcr.microsoft.com/azure-cli:latest
+        image: ub
         command:
-          - sleep
-          - inf
-      restartPolicy: Never   
+          - sh
+          - -c
+          - |
+            #!/usr/bin/env bash
+
+            # Setup kubectl cli
+            az aks install-cli
+
+            # Get IP address of the nginx loadbalancer service
+            Response=$(kubectl --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)" get --raw='/api/v1/namespaces/ingress-nginx/services')
+            LB_IP=$(echo "$Response" | jq -r '.items[]|select(.spec.type == "LoadBalancer").status.loadBalancer.ingress[].ip')
+
+            # Get all A records from the A record set for the cluster domain
+            EXISTING_A_RECORDS=$(az network dns record-set a show -g "dz-cluster" -n tracer -z clusters.sysctls.de --query aRecords --output tsv || echo)
+
+            # Remove outdated/manually added records
+            for A_RECORD in $EXISTING_A_RECORDS; do
+                if [ "$A_RECORD" != "$LB_IP" ]; then
+                    echo az network dns record-set a remove-record -z "clusters.sysctls.de" -g "dz-cluster" -n "tracer" -a "$A_RECORD"
+                fi
+            done
+
+            # Add new record to the DNS zone
+            echo az network dns record-set a add-record -z "clusters.sysctls.de" -g "dz-cluster" -n "tracer" -a "$LB_IP"
+      restartPolicy: Never
