@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: in-cluster-nginx
+  name: in-cluster-ingress-nginx
   namespace: argocd
   labels:
     app: nginx

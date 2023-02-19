@@ -16,6 +16,7 @@ spec:
   template:
     metadata:
       annotations:
+        azure.workload.identity/use: 'true'
         azure.workload.identity/inject-proxy-sidecar: 'true'
         azure.workload.identity/proxy-sidecar-port: '8080'
     spec:
@@ -43,6 +44,10 @@ spec:
             # Get IP address of the nginx loadbalancer service
             Response=$(kubectl --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)" get --raw='/api/v1/namespaces/ingress-nginx/services')
             LB_IP=$(echo "$Response" | jq -r '.items[]|select(.spec.type == "LoadBalancer").status.loadBalancer.ingress[].ip')
+
+
+            # Login
+            az login --identity -u /subscriptions/cf897062-5b9b-4b10-8897-6773333de4a4/resourceGroups/visual-setup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/dns-managed-identity
 
             # Get all A records from the A record set for the cluster domain
             EXISTING_A_RECORDS=$(az network dns record-set a show -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" --query aRecords --output tsv || echo)
