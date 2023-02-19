@@ -21,14 +21,16 @@ read -p "Enter cluster resource group: " RESOURCE_GROUP
 
 read -p "Enable OIDC Issuer and Workload Identity (y|n): " CONFIRM
 
-case option in $CONFIRM
-    'y|Y'))
+case $CONFIRM in
+    y|Y)
         echo "Enabling OIDC Issuer and Workload Identity in ${CLUSTER_NAME}"
         az extension add --name aks-preview
-        az aks update --subscription "$SUBSCRIPTION" --resource-group "$RESOURCE_GROUP" --name "$CLUSTER_NAME" --enable-oidc-issuer true --enable-workload-identity true
+        az aks update --subscription "$SUBSCRIPTION" --resource-group "$RESOURCE_GROUP" --name "$CLUSTER_NAME" --enable-oidc-issuer --enable-workload-identity true
         ;;
-    'n|N')) 
+    n|N) 
         echo "Skipping ${CLUSTER_NAME}"
         ;;
+    *)
+        echo "$CONFIRM"
 esac
  

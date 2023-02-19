@@ -7,6 +7,8 @@ dnsZoneName: cluster.sysctls.de
 
 dnsZoneResourceGroup: dz-cluster
 
+dnsZoneContributorIdentity: 0ea27f8c-6f3b-4f50-8002-ab01b6770d06
+
 nginx:
   defaultBackend:
     enabled: true
