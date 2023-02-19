@@ -5,6 +5,11 @@ tree --dirsfirst >> README.md
 .
 ├── charts
 │   ├── argocd
+│   │   ├── clusters
+│   │   │   └── visual
+│   │   │       └── values.yaml
+│   │   ├── templates
+│   │   │   └── certificate.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── cert-manager
@@ -67,5 +72,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-28 directories, 36 files
+31 directories, 38 files
 ```
