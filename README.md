@@ -30,8 +30,6 @@ tree --dirsfirst >> README.md
 │       ├── clusters
 │       │   ├── in-cluster
 │       │   │   └── values.yaml
-│       │   ├── tracer
-│       │   │   └── values.yaml
 │       │   └── visual
 │       │       └── values.yaml
 │       ├── templates
@@ -42,7 +40,6 @@ tree --dirsfirst >> README.md
 │       ├── Chart.yaml
 │       └── values.yaml
 ├── clusters
-│   └── tracer
 ├── hubs
 │   ├── in-cluster
 │   │   ├── templates
@@ -74,5 +71,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-33 directories, 38 files
+31 directories, 37 files
 ```
