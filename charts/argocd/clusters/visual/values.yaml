@@ -1,0 +1,4 @@
+# Values file for argocd
+
+clusterName: visual
+clusterDomain: clusters.sysctls.de
