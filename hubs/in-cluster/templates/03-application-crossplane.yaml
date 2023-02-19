@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: in-cluster-crossplane
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
   labels:
     app: crossplane
     cluster: in-cluster
