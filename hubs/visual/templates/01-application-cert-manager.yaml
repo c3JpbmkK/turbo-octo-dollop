@@ -21,6 +21,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
+        - clusters/visual/values.yaml
   destination:
     name: visual
     namespace: cert-manager
