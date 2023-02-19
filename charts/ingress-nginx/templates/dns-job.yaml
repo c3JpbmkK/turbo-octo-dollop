@@ -60,13 +60,10 @@ spec:
             # Remove outdated/manually added records
             for A_RECORD in $EXISTING_A_RECORDS; do
                 if [ "$A_RECORD" != "$LB_IP" ]; then
-                    echo az network dns record-set a remove-record -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" -a "$A_RECORD"
+                    az network dns record-set a remove-record -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" -a "$A_RECORD"
                 fi
             done
 
             # Add new record to the DNS zone
-            echo az network dns record-set a add-record -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" -a "$LB_IP"
-
-            # todo: keep untill testing completes
-            sleep inf
+            az network dns record-set a add-record -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" -a "$LB_IP"
       restartPolicy: Never
