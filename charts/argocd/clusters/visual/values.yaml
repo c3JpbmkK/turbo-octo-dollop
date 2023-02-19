@@ -9,6 +9,8 @@ argocd:
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: visual-cert-manager-http01-clusterissuer
+        acme.cert-manager.io/http01-ingress-class: nginx
+        acme.cert-manager.io/http01-edit-in-place: "true"
       ingressClassName: nginx
       hosts:
         - argocd.visual.clusters.sysctls.de
