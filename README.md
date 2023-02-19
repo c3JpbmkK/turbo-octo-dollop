@@ -8,6 +8,10 @@ tree --dirsfirst >> README.md
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── cert-manager
+│   │   ├── clusters
+│   │   │   └── visual
+│   │   │       └── values.yaml
+│   │   ├── templates
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── crossplane
@@ -62,5 +66,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-25 directories, 34 files
+28 directories, 35 files
 ```
