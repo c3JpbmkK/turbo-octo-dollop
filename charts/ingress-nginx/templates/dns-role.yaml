@@ -11,12 +11,6 @@ rules:
   - apiGroups:
     - ""
     resources:
-      - namespaces
-    verbs:
-      - get
-  - apiGroups:
-    - ""
-    resources:
     - services
     verbs:
     - get
