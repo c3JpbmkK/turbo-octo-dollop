@@ -1,5 +1,7 @@
 # Values file for cert-manager
 
+email: s.mohanaarunachalam@reply.de
+
 certmanager:
   installCRDs: true
 

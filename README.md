@@ -12,6 +12,7 @@ tree --dirsfirst >> README.md
 │   │   │   └── visual
 │   │   │       └── values.yaml
 │   │   ├── templates
+│   │   │   └── http01-clusterissuer.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── crossplane
@@ -66,5 +67,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-28 directories, 35 files
+28 directories, 36 files
 ```
