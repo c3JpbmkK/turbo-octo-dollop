@@ -5,7 +5,7 @@ clusterName: tracer
 
 dnsZoneName: cluster.sysctls.de
 
-dnsZoneResourceGroup: cluster.sysctls.de
+dnsZoneResourceGroup: dz-cluster
 
 nginx:
   defaultBackend:

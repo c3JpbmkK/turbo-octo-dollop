@@ -66,7 +66,8 @@ tree --dirsfirst >> README.md
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
-└── teardown.sh
+├── teardown.sh
+└── workloadIdentity.sh
 
-26 directories, 39 files
+26 directories, 40 files
 ```
