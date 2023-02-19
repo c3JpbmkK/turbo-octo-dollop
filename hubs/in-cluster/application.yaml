@@ -4,8 +4,8 @@ metadata:
   name: in-cluster
   namespace: argocd
   # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  # finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
 spec:
   project: in-cluster
   source:
@@ -20,7 +20,7 @@ spec:
     - CreateNamespace=true
     - ApplyOutOfSyncOnly=true
     # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
-    - PrunePropagationPolicy=foreground
+    # - PrunePropagationPolicy=foreground
     automated:
       prune: true
       selfHeal: true
