@@ -3,7 +3,7 @@
 # todo: Use correct cluster name
 clusterName: tracer
 
-dnsZoneName: cluster.sysctls.de
+dnsZoneName: clusters.sysctls.de
 
 dnsZoneResourceGroup: dz-cluster
 
