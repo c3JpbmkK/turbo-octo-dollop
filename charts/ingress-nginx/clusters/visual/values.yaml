@@ -1,6 +1,7 @@
 # Values file for ingress-nginx
 
-clusterName: visual
+# todo: Use correct cluster name
+clusterName: tracer
 
 dnsZoneName: cluster.sysctls.de
 
