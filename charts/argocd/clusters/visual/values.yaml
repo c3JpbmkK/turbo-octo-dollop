@@ -12,3 +12,7 @@ argocd:
       ingressClassName: nginx
       hosts:
         - argocd.visual.clusters.sysctls.de
+      tls: 
+        - secretName: argocd-server-tls
+          hosts:
+            - argocd.visual.clusters.sysctls.de
