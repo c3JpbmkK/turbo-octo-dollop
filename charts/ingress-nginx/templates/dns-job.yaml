@@ -12,7 +12,7 @@ spec:
   completions: 1
   parallelism: 1
   suspend: false
-  ttlSecondsAfterFinished: 10
+  ttlSecondsAfterFinished: 300
   template:
     spec:
       serviceAccountName: '{{ .Release.Name }}-dns'
