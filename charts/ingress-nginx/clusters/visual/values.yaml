@@ -21,7 +21,3 @@ nginx:
         memory: 500Mi
     autoscaling:
       enabled: false
-      maxReplicas: 5
-      minReplicas: 1
-      targetCPUUtilizationPercentage: 50
-      targetMemoryUtilizationPercentage: 50

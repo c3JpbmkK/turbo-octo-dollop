@@ -4,6 +4,9 @@ nginx:
   defaultBackend:
     enabled: true
   controller:
+    service:
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
     autoscaling:
       enabled: true
       maxReplicas: 5
