@@ -1,17 +1,16 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: dns-rolebinding
-  namespace: ingress-nginx
-  # namespace: '{{ .Release.Namespace }}'
+  name: '{{ .Release.Name }}-dns-rolebinding'
+  namespace: '{{ .Release.Namespace }}'
   annotations:
     helm.sh/hook: post-install
     helm.sh/hook-delete-policy: hook-succeeded
 subjects:
 - kind: ServiceAccount
-  name: dns-serviceaccount
-  namespace: ingress-nginx
+  name: '{{ .Release.Name }}-dns-serviceaccount'
+  namespace: '{{ .Release.Namespace }}'
 roleRef:
   kind: Role
-  name: dns-role
+  name: '{{ .Release.Name }}-dns-role'
   apiGroup: rbac.authorization.k8s.io
