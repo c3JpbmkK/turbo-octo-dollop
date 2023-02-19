@@ -19,8 +19,8 @@ spec:
         azure.workload.identity/use: 'true'
       annotations:
         azure.workload.identity/use: 'true'
-        azure.workload.identity/inject-proxy-sidecar: 'true'
-        azure.workload.identity/proxy-sidecar-port: '8080'
+        # azure.workload.identity/inject-proxy-sidecar: 'true'
+        # azure.workload.identity/proxy-sidecar-port: '8080'
     spec:
       serviceAccountName: '{{ .Release.Name }}-dns'
       automountServiceAccountToken: true
@@ -28,6 +28,10 @@ spec:
       - name: azure-cli
         image: mcr.microsoft.com/azure-cli:latest
         env:
+          - name: DNS_ZONE_CONTRIBUTOR_IDENTITY
+            value: '{{ .Values.dnsZoneContributorIdentity }}'
+          - name: CLUSTER_TENANT
+            value: '{{ .Values.dnsZoneContributorTenant }}'
           - name: CLUSTER_NAME
             value: '{{ .Values.clusterName }}'
           - name: CLUSTER_DOMAIN
@@ -40,7 +44,6 @@ spec:
           - |
             #!/usr/bin/env bash
 
-            sleep inf
             # Setup kubectl cli
             az aks install-cli
 
@@ -48,9 +51,8 @@ spec:
             Response=$(kubectl --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)" get --raw='/api/v1/namespaces/ingress-nginx/services')
             LB_IP=$(echo "$Response" | jq -r '.items[]|select(.spec.type == "LoadBalancer").status.loadBalancer.ingress[].ip')
 
-
             # Login
-            az login --identity -u /subscriptions/cf897062-5b9b-4b10-8897-6773333de4a4/resourceGroups/visual-setup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/dns-managed-identity
+            az login --service-principal -u "$DNS_ZONE_CONTRIBUTOR_IDENTITY" -t "$CLUSTER_TENANT" --federated-token $(cat /var/run/secrets/azure/tokens/azure-identity-token)
 
             # Get all A records from the A record set for the cluster domain
             EXISTING_A_RECORDS=$(az network dns record-set a show -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" --query aRecords --output tsv || echo)
@@ -64,4 +66,7 @@ spec:
 
             # Add new record to the DNS zone
             echo az network dns record-set a add-record -z "$CLUSTER_DOMAIN" -g "$RESOURCE_GROUP" -n "$CLUSTER_NAME" -a "$LB_IP"
+
+            # todo: keep untill testing completes
+            sleep inf
       restartPolicy: Never
