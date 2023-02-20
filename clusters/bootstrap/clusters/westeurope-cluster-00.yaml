@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: westeurope-cluster-00
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  labels:
+    cluster: westeurope-cluster-00
+    topology.kubernetes.io/region: westeurope
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+    targetRevision: '6-hooks'
+    path: charts/aks
+    helm:
+      valueFiles:
+        - values.yaml
+        - clusters/westeurope-cluster-00/values.yaml
+  destination:
+    name: in-cluster
+    namespace: westeurope-cluster-00
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+    automated:
+      prune: true
+      selfHeal: true

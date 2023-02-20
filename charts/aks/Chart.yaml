@@ -1,0 +1,7 @@
+apiVersion: v2
+name: aks
+description: A Helm chart for Azure Kubernetes Service managed clusters
+
+type: library
+
+version: 0.1.0

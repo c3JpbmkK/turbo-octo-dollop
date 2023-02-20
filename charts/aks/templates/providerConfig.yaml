@@ -1,0 +1,13 @@
+apiVersion: azure.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: liquid-provider-config
+  annotations:
+    helm.sh/hook: pre-install, pre-upgrade
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: azure-provider-config
+      key: creds

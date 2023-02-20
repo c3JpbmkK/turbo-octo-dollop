@@ -4,6 +4,20 @@
 tree --dirsfirst >> README.md
 .
 ├── charts
+│   ├── aks
+│   │   ├── clusters
+│   │   │   └── westeurope-cluster-00
+│   │   │       └── values.yaml
+│   │   ├── templates
+│   │   │   ├── tests
+│   │   │   │   └── test-connection.yaml
+│   │   │   ├── _helpers.tpl
+│   │   │   ├── NOTES.txt
+│   │   │   ├── providerConfig.yaml
+│   │   │   ├── provider.yaml
+│   │   │   └── resourceGroup.yaml
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
 │   ├── argo-cd
 │   │   ├── clusters
 │   │   │   └── visual
@@ -41,6 +55,7 @@ tree --dirsfirst >> README.md
 ├── clusters
 │   ├── bootstrap
 │   │   ├── clusters
+│   │   │   └── westeurope-cluster-00.yaml
 │   │   ├── providerConfigs
 │   │   │   └── azure-provider-config.yaml
 │   │   ├── install.sh
@@ -69,5 +84,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-31 directories, 35 files
+36 directories, 45 files
 ```
