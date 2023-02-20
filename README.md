@@ -43,6 +43,7 @@ tree --dirsfirst >> README.md
 │   │   ├── charts
 │   │   │   ├── argo-cd-5.22.0.tgz
 │   │   │   └── crossplane-1.11.0.tgz
+│   │   ├── clusters
 │   │   ├── templates
 │   │   ├── Chart.lock
 │   │   ├── Chart.yaml
@@ -71,5 +72,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-31 directories, 37 files
+32 directories, 37 files
 ```
