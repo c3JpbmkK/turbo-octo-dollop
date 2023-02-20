@@ -4,7 +4,7 @@
 tree --dirsfirst >> README.md
 .
 ├── charts
-│   ├── argocd
+│   ├── argo-cd
 │   │   ├── clusters
 │   │   │   └── visual
 │   │   │       └── values.yaml
@@ -42,12 +42,9 @@ tree --dirsfirst >> README.md
 ├── clusters
 │   ├── in-cluster
 │   │   ├── templates
-│   │   │   ├── 00-application-ingress-nginx.yaml
-│   │   │   ├── 01-application-cert-manager.yaml
-│   │   │   ├── 02-application-argocd.yaml
-│   │   │   └── 03-application-crossplane.yaml
-│   │   ├── application.yaml
-│   │   └── project.yaml
+│   │   ├── Chart.yaml
+│   │   ├── README.md
+│   │   └── values.yaml
 │   └── visual
 │       ├── templates
 │       │   ├── 00-application-ingress-nginx.yaml
@@ -71,5 +68,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-30 directories, 38 files
+30 directories, 35 files
 ```

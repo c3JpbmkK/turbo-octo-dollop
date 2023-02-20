@@ -17,7 +17,7 @@ spec:
   source:
     repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
     targetRevision: '5-mono'
-    path: charts/argocd
+    path: charts/argo-cd
     helm:
       valueFiles:
         - values.yaml
