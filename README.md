@@ -10,7 +10,6 @@ tree --dirsfirst >> README.md
 │   │   │       └── values.yaml
 │   │   ├── templates
 │   │   │   ├── tests
-│   │   │   │   └── test-connection.yaml
 │   │   │   ├── _helpers.tpl
 │   │   │   ├── NOTES.txt
 │   │   │   ├── providerConfig.yaml
@@ -84,5 +83,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-36 directories, 45 files
+36 directories, 44 files
 ```
