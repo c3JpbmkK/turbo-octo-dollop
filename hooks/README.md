@@ -1,3 +1,3 @@
 # hooks
 
-Symlink a hook to the `.git/hooks/` folder.
+Copy the hooks to the `.git/hooks/` folder as required.
