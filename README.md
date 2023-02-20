@@ -9,7 +9,6 @@ tree --dirsfirst >> README.md
 │   │   │   └── visual
 │   │   │       └── values.yaml
 │   │   ├── templates
-│   │   │   └── certificate.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── cert-manager
@@ -68,5 +67,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-30 directories, 35 files
+30 directories, 34 files
 ```
