@@ -10,7 +10,8 @@ tree --dirsfirst >> README.md
 │   │   │       └── values.yaml
 │   │   ├── templates
 │   │   │   ├── providerConfig.yaml
-│   │   │   └── resourceGroup.yaml
+│   │   │   ├── resourceGroup.yaml
+│   │   │   └── userAssignedManagedIdentity.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── argo-cd
@@ -80,5 +81,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-35 directories, 42 files
+35 directories, 43 files
 ```

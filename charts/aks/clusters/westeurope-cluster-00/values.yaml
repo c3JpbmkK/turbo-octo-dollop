@@ -6,4 +6,4 @@ location: "West Europe"
 
 providerConfigSecret: 
   name: "azure-provider-config"
-  key: creds
+  key: "creds"
