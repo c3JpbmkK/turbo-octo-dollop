@@ -1,0 +1,13 @@
+# Values file for argocd
+
+argocd:
+  server:
+    ingress:
+      enabled: true
+      annotations:
+        acme.cert-manager.io/http01-ingress-class: nginx
+        acme.cert-manager.io/http01-edit-in-place: "true"
+        kubernetes.io/ingress.class: nginx
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/ssl-passthrough: "true"

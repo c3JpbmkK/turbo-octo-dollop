@@ -1,0 +1,44 @@
+apiVersion: v2
+name: bootstrap
+description: A Helm chart for Kubernetes control-planes.
+version: "5.22.0"
+home: https://github.com/c3JpbmkK/turbo-octo-dollop
+sources:
+  - https://github.com/c3JpbmkK/turbo-octo-dollop/tree/6-hooks
+keywords:
+  # keywords from argocd chart
+  - argoproj
+  - argocd
+  - gitops
+  # keywords from crossplane chart
+  - cloud
+  - infrastructure
+  - services
+  - application
+  - database
+  - cache
+  - bucket
+  - infra
+  - app
+  - ops
+  - gcp
+  - azure
+  - aws
+  - alibaba
+  - cloudsql
+  - rds
+  - s3
+  - azuredatabase
+  - asparadb
+  - gke
+  - aks
+  - eks
+dependencies:
+  - name: argo-cd
+    alias: argocd
+    version: "5.22.0"
+    repository: https://argoproj.github.io/argo-helm
+  - name: crossplane
+    version: "1.11.0"
+    repository: https://charts.crossplane.io/stable
+    alias: crossplane
