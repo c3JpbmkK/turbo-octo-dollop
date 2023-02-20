@@ -8,3 +8,5 @@ spec:
     location: '{{ .Values.location }}'
     name: '{{ .Release.Name }}'
     resourceGroupName: '{{ .Release.Name }}'
+  providerConfigRef:
+      name: '{{ .Release.Name }}'
