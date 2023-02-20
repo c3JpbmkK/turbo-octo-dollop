@@ -1,0 +1,14 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: DNSZone
+metadata:
+  annotations:
+    crossplane.io/external-name: upbound-example.com
+    meta.upbound.io/example-id: cdn/v1beta1/frontdoorroute
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+spec:
+  forProvider:
+    resourceGroupNameSelector:
+      matchLabels:
+        testing.upbound.io/example-name: rgexample
