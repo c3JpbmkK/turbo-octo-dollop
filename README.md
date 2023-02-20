@@ -39,16 +39,10 @@ tree --dirsfirst >> README.md
 │       ├── Chart.yaml
 │       └── values.yaml
 ├── clusters
-│   ├── in-cluster
-│   │   ├── charts
-│   │   │   ├── argo-cd-5.22.0.tgz
-│   │   │   └── crossplane-1.11.0.tgz
+│   ├── bootstrap
 │   │   ├── clusters
-│   │   ├── templates
-│   │   ├── Chart.lock
-│   │   ├── Chart.yaml
-│   │   ├── README.md
-│   │   └── values.yaml
+│   │   ├── install.sh
+│   │   └── README.md
 │   └── visual
 │       ├── templates
 │       │   ├── 00-application-ingress-nginx.yaml
@@ -72,5 +66,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-32 directories, 37 files
+30 directories, 33 files
 ```

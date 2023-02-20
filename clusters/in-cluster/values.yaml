@@ -1,7 +1,0 @@
-# Values file for in-cluster cluster
-
-# Values for the argo-cd chart
-arogcd: 
-
-# Values for the crossplane chart
-crossplane-system:
