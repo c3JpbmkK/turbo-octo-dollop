@@ -35,5 +35,10 @@ helm upgrade crossplane crossplane-stable/crossplane \
 kubectl apply -f provider/provider.yaml
 
 # Wait for provier to become available
+Provider=$(kubectl get provider upbound-provider-azure -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')
+while [ -z "$Provider" ] ; do
+    echo "Waiting for provider to become healthy"
+    sleep 5
+    Provider=$(kubectl get provider upbound-provider-azure -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')
+done
 
-# Deploy provider

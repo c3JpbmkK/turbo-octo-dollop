@@ -1,0 +1,9 @@
+# Values file for westeurope-cluster-00
+
+deletionPolicy: "Delete"
+
+location: "West Europe"
+
+providerConfigSecret: 
+  name: "azure-provider-config"
+  key: creds

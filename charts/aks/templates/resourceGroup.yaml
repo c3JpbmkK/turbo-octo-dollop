@@ -1,9 +1,11 @@
 apiVersion: azure.upbound.io/v1beta1
 kind: ResourceGroup
 metadata:
-  name: crossplane-created-resource-group
+  name: '{{ .Release.Name }}'
+  # chore: scope it to a namespace
 spec:
+  deletionPolicy: '{{ .Values.deletionPolicy }}'
   forProvider:
-    location: "West Europe"
+    location: '{{ .Values.location }}'
   providerConfigRef:
-    name: liquid-provider-config
+    name: '{{ .Values.providerConfig }}'
