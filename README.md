@@ -41,6 +41,8 @@ tree --dirsfirst >> README.md
 ├── clusters
 │   ├── bootstrap
 │   │   ├── clusters
+│   │   ├── providerConfigs
+│   │   │   └── azure-provider-config.yaml
 │   │   ├── install.sh
 │   │   ├── README.md
 │   │   └── teardown.sh
@@ -67,5 +69,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-30 directories, 34 files
+31 directories, 35 files
 ```
