@@ -3,6 +3,6 @@ kind: Provider
 metadata:
   name: upbound-provider-azure
   annotations:
-    helm.sh/hook: pre-install, pre-upgrade
+    "helm.sh/hook": pre-install, pre-upgrade
 spec:
   package: xpkg.upbound.io/upbound/provider-azure:v0.16.0

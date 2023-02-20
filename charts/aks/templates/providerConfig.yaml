@@ -3,7 +3,7 @@ kind: ProviderConfig
 metadata:
   name: liquid-provider-config
   annotations:
-    helm.sh/hook: pre-install, pre-upgrade
+    "helm.sh/hook": pre-install, pre-upgrade
 spec:
   credentials:
     source: Secret
