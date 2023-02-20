@@ -42,7 +42,8 @@ tree --dirsfirst >> README.md
 │   ├── bootstrap
 │   │   ├── clusters
 │   │   ├── install.sh
-│   │   └── README.md
+│   │   ├── README.md
+│   │   └── teardown.sh
 │   └── visual
 │       ├── templates
 │       │   ├── 00-application-ingress-nginx.yaml
@@ -66,5 +67,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-30 directories, 33 files
+30 directories, 34 files
 ```

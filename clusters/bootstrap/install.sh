@@ -20,8 +20,7 @@ helm upgrade sealed-secrets sealed-secrets/sealed-secrets \
 helm upgrade argo-cd argo/argo-cd \
                             --install \
                             --create-namespace \
-                            --namespace argo/argo-cd \
-                            --set-string fullnameOverride=sealed-secrets-controller
+                            --namespace argocd \
 
 # Install crossplane
 helm upgrade crossplane crossplane-stable/crossplane \
