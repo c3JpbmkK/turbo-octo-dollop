@@ -9,6 +9,7 @@ tree --dirsfirst >> README.md
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── templates
+│   │   │   ├── providerConfig.yaml
 │   │   │   └── resourceGroup.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
@@ -52,7 +53,6 @@ tree --dirsfirst >> README.md
 │   │   │   └── westeurope-cluster-00.yaml
 │   │   ├── provider
 │   │   │   ├── azure-provider-config.yaml
-│   │   │   ├── providerConfig.yaml
 │   │   │   └── provider.yaml
 │   │   ├── install.sh
 │   │   ├── README.md

@@ -28,3 +28,12 @@ helm upgrade crossplane crossplane-stable/crossplane \
                             --namespace crossplane-system \
                             --create-namespace  
 
+# todo: configure sealed-secrets to be able to unseal sealed-secrets
+
+# Deploy azure provider
+## https://marketplace.upbound.io/providers/upbound/provider-azure/v0.27.0
+kubectl apply -f provider/provider.yaml
+
+# Wait for provier to become available
+
+# Deploy provider
