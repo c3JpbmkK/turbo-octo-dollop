@@ -40,7 +40,6 @@ tree --dirsfirst >> README.md
 │       ├── Chart.yaml
 │       └── values.yaml
 ├── clusters
-├── hubs
 │   ├── in-cluster
 │   │   ├── templates
 │   │   │   ├── 00-application-ingress-nginx.yaml
@@ -71,5 +70,5 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-31 directories, 37 files
+30 directories, 37 files
 ```
