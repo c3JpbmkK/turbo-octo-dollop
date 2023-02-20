@@ -66,6 +66,9 @@ tree --dirsfirst >> README.md
 │       │   └── 03-application-crossplane.yaml
 │       ├── application.yaml
 │       └── project.yaml
+├── hooks
+│   ├── pre-commit
+│   └── README.md
 ├── manifests
 │   ├── base
 │   └── overlays
@@ -76,13 +79,12 @@ tree --dirsfirst >> README.md
 ├── kill-port-forward.sh
 ├── nohup.out
 ├── port-forward.sh
-├── pre-commit.backup
 ├── README.md
 ├── setup.sh
 ├── teardown.sh
 └── workloadIdentity.sh
 
-35 directories, 44 files
+36 directories, 45 files
 ```
 
 ---
@@ -91,7 +93,7 @@ tree --dirsfirst >> README.md
 
 ```bash
 clusters/bootstrap/install.sh:# todo: configure sealed-secrets to be able to unseal sealed-secrets
-pre-commit.backup:git grep "todo:" >> README.md
+hooks/pre-commit:git grep "todo:" >> README.md
 ```
 
 ---
@@ -104,6 +106,6 @@ charts/ingress-nginx/templates/dns-job.yaml:            az account set -s "$DNS_
 clusters/bootstrap/README.md:## chore: find out about `--set-string fullnameOverride=sealed-secrets-controller`
 clusters/bootstrap/README.md:## chore: Advanced management of sealed-secrets sealing key secret
 clusters/visual/templates/01-application-cert-manager.yaml:    # chore: identify if we can exactly ignore the following instead of everything under webhooks
-pre-commit.backup:git grep "chore:" >> README.md
+hooks/pre-commit:git grep "chore:" >> README.md
 ```
 
