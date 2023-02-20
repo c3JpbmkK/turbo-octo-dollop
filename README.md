@@ -89,17 +89,21 @@ tree --dirsfirst >> README.md
 
 ## todos
 
+```bash
 clusters/bootstrap/install.sh:# todo: configure sealed-secrets to be able to unseal sealed-secrets
 pre-commit.backup:git grep "todo:" >> README.md
+```
 
 ---
 
 ## chores
 
+```bash
 charts/aks/templates/resourceGroup.yaml:  # chore: scope it to a namespace
 charts/ingress-nginx/templates/dns-job.yaml:            az account set -s "$DNS_ZONE_SUBSCRIPTION" # chore: remove this line if design is accepted
 clusters/bootstrap/README.md:## chore: find out about `--set-string fullnameOverride=sealed-secrets-controller`
 clusters/bootstrap/README.md:## chore: Advanced management of sealed-secrets sealing key secret
 clusters/visual/templates/01-application-cert-manager.yaml:    # chore: identify if we can exactly ignore the following instead of everything under webhooks
 pre-commit.backup:git grep "chore:" >> README.md
+```
 

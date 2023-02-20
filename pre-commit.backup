@@ -15,13 +15,17 @@ echo '---' >> README.md
 echo >> README.md
 echo '## todos' >> README.md
 echo >> README.md
+echo '```bash' >> README.md
 git grep "todo:" >> README.md
+echo '```' >> README.md
 echo >> README.md
 echo '---' >> README.md
 echo >> README.md
 echo '## chores' >> README.md
 echo >> README.md
+echo '```bash' >> README.md
 git grep "chore:" >> README.md
+echo '```' >> README.md
 echo >> README.md
 
 git add README.md
