@@ -4,4 +4,4 @@
 arogcd: 
 
 # Values for the crossplane chart
-crossplane:
+crossplane-system:

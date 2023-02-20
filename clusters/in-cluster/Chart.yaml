@@ -4,7 +4,7 @@ description: A Helm chart for Kubernetes control-planes.
 version: "5.22.0"
 home: https://github.com/c3JpbmkK/turbo-octo-dollop
 sources:
-  - https://github.com/c3JpbmkK/turbo-octo-dollop/tree/6-hooks
+  - https://github.com/c3JpbmkK/turbo-octo-dollop/
 keywords:
   # keywords from argocd chart
   - argoproj
@@ -41,4 +41,4 @@ dependencies:
   - name: crossplane
     version: "1.11.0"
     repository: https://charts.crossplane.io/stable
-    alias: crossplane
+    alias: crossplane-system
