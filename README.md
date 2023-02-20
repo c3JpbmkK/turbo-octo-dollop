@@ -52,7 +52,7 @@ tree --dirsfirst >> README.md
 │   ├── bootstrap
 │   │   ├── clusters
 │   │   │   └── westeurope-cluster-00.yaml
-│   │   ├── providerConfigs
+│   │   ├── provider
 │   │   │   └── azure-provider-config.yaml
 │   │   ├── install.sh
 │   │   ├── README.md
