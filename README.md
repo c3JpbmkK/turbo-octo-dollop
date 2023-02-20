@@ -64,11 +64,12 @@ tree --dirsfirst >> README.md
 │       ├── prod
 │       └── test
 ├── kill-port-forward.sh
+├── nohup.out
 ├── port-forward.sh
 ├── README.md
 ├── setup.sh
 ├── teardown.sh
 └── workloadIdentity.sh
 
-30 directories, 37 files
+30 directories, 38 files
 ```
