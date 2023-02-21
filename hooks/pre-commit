@@ -15,17 +15,17 @@ echo '---' >> README.md
 echo >> README.md
 echo '## todos' >> README.md
 echo >> README.md
-echo '```bash' >> README.md
-git grep "todo:" >> README.md
-echo '```' >> README.md
+git grep -in "todo:" | grep -v "hooks" | awk -F ":" 'BEGIN {print "File name | Line number | Todo"
+							   print "---|---|---|" }
+							  {print $1"|"$2"|"$4$5$6$7$8$9$10"|"}' >> README.md
 echo >> README.md
 echo '---' >> README.md
 echo >> README.md
 echo '## chores' >> README.md
 echo >> README.md
-echo '```bash' >> README.md
-git grep "chore:" >> README.md
-echo '```' >> README.md
+git grep -in "chore:" | grep -v "hooks" | awk -F ":" 'BEGIN {print "File name | Line number | Chore"
+							   print "---|---|---|" }
+							  {print $1"|"$2"|"$4$5$6$7$8$9$10"|"}' >> README.md
 echo >> README.md
 
 git add README.md

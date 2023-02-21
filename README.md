@@ -94,21 +94,18 @@ tree --dirsfirst >> README.md
 
 ## todos
 
-```bash
-clusters/bootstrap/install.sh:# todo: configure sealed-secrets to be able to unseal sealed-secrets
-hooks/pre-commit:git grep "todo:" >> README.md
-```
+File name | Line number | Todo
+---|---|---|
+clusters/bootstrap/install.sh|31| configure sealed-secrets to be able to unseal sealed-secrets|
 
 ---
 
 ## chores
 
-```bash
-charts/aks/templates/resourceGroup.yaml:  # chore: scope it to a namespace
-charts/ingress-nginx/templates/dns-job.yaml:            az account set -s "$DNS_ZONE_SUBSCRIPTION" # chore: remove this line if design is accepted
-clusters/bootstrap/README.md:## chore: find out about `--set-string fullnameOverride=sealed-secrets-controller`
-clusters/bootstrap/README.md:## chore: Advanced management of sealed-secrets sealing key secret
-clusters/visual/templates/01-application-cert-manager.yaml:    # chore: identify if we can exactly ignore the following instead of everything under webhooks
-hooks/pre-commit:git grep "chore:" >> README.md
-```
+File name | Line number | Chore
+---|---|---|
+charts/aks/templates/resourceGroup.yaml|5| scope it to a namespace|
+charts/ingress-nginx/templates/dns-job.yaml|56| remove this line if design is accepted|
+clusters/bootstrap/README.md|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
+clusters/bootstrap/README.md|7| Advanced management of sealed-secrets sealing key secret|
 
