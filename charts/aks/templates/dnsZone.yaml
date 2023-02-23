@@ -5,6 +5,7 @@ metadata:
     crossplane.io/external-name: '{{ .Release.Name }}.{{ .Values.clusterDomain }}'
   name: '{{ .Release.Name }}'
 spec:
+  deletionPolicy: '{{ .Values.deletionPolicy }}'
   forProvider:
     resourceGroupName: '{{ .Release.Name }}'
   providerConfigRef:
