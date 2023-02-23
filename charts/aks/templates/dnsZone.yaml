@@ -2,7 +2,7 @@ apiVersion: network.azure.upbound.io/v1beta1
 kind: DNSZone
 metadata:
   annotations:
-    crossplane.io/external-name: '{{ .Values.clusterDomain }}'
+    crossplane.io/external-name: '{{ .Release.Name }}.{{ .Values.clusterDomain }}'
   name: '{{ .Release.Name }}'
 spec:
   forProvider:
