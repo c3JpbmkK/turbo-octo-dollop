@@ -1,1 +1,15 @@
 # Values file for a aks chart
+
+
+# What should happen to resources provisioned by Crossplane if the corresponding crossplane resources is deleted
+# Possbile options are Delete, Orphan
+deletionPolicy: "Delete"
+
+# Location in which to create the azure resources.
+# location: "West Europe"
+
+# The domain name to use after the cluster name
+# For example, 
+# if cluster name is cluster-01, and the domain name is clusters.example.com
+# dns zone name will be cluster-01.clusters.example.com
+# clusterDomain: clusters.sysctls.de

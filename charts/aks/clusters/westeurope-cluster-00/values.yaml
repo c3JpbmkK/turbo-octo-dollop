@@ -4,6 +4,9 @@ deletionPolicy: "Delete"
 
 location: "West Europe"
 
+clusterDomain: clusters.sysctls.de
+
 providerConfigSecret: 
   name: "azure-provider-config"
   key: "creds"
+
