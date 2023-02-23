@@ -32,7 +32,7 @@ helm upgrade crossplane crossplane-stable/crossplane \
 
 # Deploy azure provider
 ## https://marketplace.upbound.io/providers/upbound/provider-azure/v0.27.0
-kubectl apply -f provider/provider.yaml
+kubectl apply -f provider/provider.yaml # todo: remove relative path to YAML file or use absolute path from root of repo
 
 # Wait for provier to become available
 Provider=$(kubectl get provider upbound-provider-azure -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')

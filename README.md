@@ -97,6 +97,7 @@ tree --dirsfirst >> README.md
 File name | Line number | Todo
 ---|---|---|
 clusters/bootstrap/install.sh|31| configure sealed-secrets to be able to unseal sealed-secrets|
+clusters/bootstrap/install.sh|35| remove relative path to YAML file or use absolute path from root of repo|
 
 ---
 
