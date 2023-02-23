@@ -9,6 +9,7 @@ tree --dirsfirst >> README.md
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── templates
+│   │   │   ├── agentpool.yaml
 │   │   │   ├── dnsZoneUpdate-job.yaml.txt
 │   │   │   ├── dnsZone.yaml
 │   │   │   ├── managedCluster.yaml
@@ -88,7 +89,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-36 directories, 49 files
+36 directories, 50 files
 ```
 
 ---

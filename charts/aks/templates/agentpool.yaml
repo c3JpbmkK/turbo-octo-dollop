@@ -1,0 +1,18 @@
+apiVersion: containerservice.azure.upbound.io/v1beta1
+kind: KubernetesClusterNodePool
+metadata:
+  labels:
+    kubernetesCluster: '{{ .Release.Name }}'
+  name: agentpool
+spec:
+  forProvider:
+    kubernetesClusterIdSelector:
+      matchLabels:
+        kubernetesCluster: '{{ .Release.Name }}'
+    nodeCount: 1
+    tags:
+      Environment: Production
+    vmSize: Standard_DS2_v2
+  providerConfigRef:
+    name: '{{ .Release.Name }}'
+  
