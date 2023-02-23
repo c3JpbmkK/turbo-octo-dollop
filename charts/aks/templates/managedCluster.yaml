@@ -3,7 +3,6 @@ kind: KubernetesCluster
 metadata:
   name: '{{ .Release.Name }}'
   labels:
-    location: '{{ .Values.location }}'
     kubernetesCluster: '{{ .Release.Name }}'
 spec:
   forProvider:
