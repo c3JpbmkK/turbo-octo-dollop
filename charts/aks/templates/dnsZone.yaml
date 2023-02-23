@@ -1,7 +1,7 @@
 apiVersion: network.azure.upbound.io/v1beta1
 kind: DNSZone
 metadata:
-  name: '{{ .Release.Name }}.{{ .Values.clustersDomain }}'
+  name: '{{ .Release.Name }}.{{ .Values.clusterDomain }}'
 spec:
   forProvider:
     resourceGroupName: '{{ .Release.Name }}'
