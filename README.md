@@ -9,6 +9,7 @@ tree --dirsfirst >> README.md
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── templates
+│   │   │   ├── dnsZoneUpdate-job.yaml.txt
 │   │   │   ├── dnsZone.yaml
 │   │   │   ├── managedCluster.yaml
 │   │   │   ├── nodePools.yaml
@@ -87,7 +88,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-36 directories, 48 files
+36 directories, 49 files
 ```
 
 ---
@@ -105,6 +106,7 @@ File name | Line number | Todo
 
 File name | Line number | Chore
 ---|---|---|
+[charts/aks/templates/dnsZoneUpdate-job.yaml.txt](charts/aks/templates/dnsZoneUpdate-job.yaml.txt)|56| remove this line if design is accepted|
 [charts/aks/templates/resourceGroup.yaml](charts/aks/templates/resourceGroup.yaml)|5| scope it to a namespace|
 [charts/ingress-nginx/templates/dns-job.yaml](charts/ingress-nginx/templates/dns-job.yaml)|56| remove this line if design is accepted|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
