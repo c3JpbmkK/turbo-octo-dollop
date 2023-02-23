@@ -12,6 +12,6 @@ spec:
     identity:
       - type: SystemAssigned
     location: '{{ .Values.location }}'
-    resourceGroupName: '{{ .Values.location }}'
+    resourceGroupName: '{{ .Release.Name }}'
   providerConfigRef:
     name: '{{ .Release.Name }}'
