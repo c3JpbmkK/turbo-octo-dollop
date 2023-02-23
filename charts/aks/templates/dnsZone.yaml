@@ -10,3 +10,6 @@ spec:
     resourceGroupName: '{{ .Release.Name }}'
   providerConfigRef:
     name: '{{ .Release.Name }}'
+  writeConnectionSecretToRef:
+    name: dnszonesecret
+    namespace: crossplane-system
