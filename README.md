@@ -96,8 +96,8 @@ tree --dirsfirst >> README.md
 
 File name | Line number | Todo
 ---|---|---|
-clusters/bootstrap/install.sh|31| configure sealed-secrets to be able to unseal sealed-secrets|
-clusters/bootstrap/install.sh|35| remove relative path to YAML file or use absolute path from root of repo|
+[clusters/bootstrap/install.sh](clusters/bootstrap/install.sh)|31| configure sealed-secrets to be able to unseal sealed-secrets|
+[clusters/bootstrap/install.sh](clusters/bootstrap/install.sh)|35| remove relative path to YAML file or use absolute path from root of repo|
 
 ---
 
@@ -105,8 +105,8 @@ clusters/bootstrap/install.sh|35| remove relative path to YAML file or use absol
 
 File name | Line number | Chore
 ---|---|---|
-charts/aks/templates/resourceGroup.yaml|5| scope it to a namespace|
-charts/ingress-nginx/templates/dns-job.yaml|56| remove this line if design is accepted|
-clusters/bootstrap/README.md|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
-clusters/bootstrap/README.md|7| Advanced management of sealed-secrets sealing key secret|
+[charts/aks/templates/resourceGroup.yaml](charts/aks/templates/resourceGroup.yaml)|5| scope it to a namespace|
+[charts/ingress-nginx/templates/dns-job.yaml](charts/ingress-nginx/templates/dns-job.yaml)|56| remove this line if design is accepted|
+[clusters/bootstrap/README.md](clusters/bootstrap/README.md)|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
+[clusters/bootstrap/README.md](clusters/bootstrap/README.md)|7| Advanced management of sealed-secrets sealing key secret|
 
