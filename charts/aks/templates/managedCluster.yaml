@@ -18,5 +18,5 @@ spec:
   providerConfigRef:
     name: {{ .Release.Name }}
   writeConnectionSecretToRef:
-    name: {{ .Release.Name }}-connection-secret
+    name: '{{ .Release.Name }}-connection-secret'
     namespace: crossplane-system

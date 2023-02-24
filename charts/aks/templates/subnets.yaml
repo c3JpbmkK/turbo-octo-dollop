@@ -1,0 +1,38 @@
+# https://helm.sh/docs/chart_template_guide/variables/
+{{- $ReleaseName := .Release.Name -}}
+{{- if .Values.virtualNetwork.subnets }}
+{{- range $subnet := .Values.virtualNetwork.subnets }}
+---
+apiVersion: network.azure.upbound.io/v1beta1
+kind: Subnet
+metadata:
+  name: {{ $subnet.name }}
+spec:
+  forProvider:
+    addressPrefixes:
+      - {{ $subnet.addressPrefix }}
+    resourceGroupNameRef:
+      name: {{ $ReleaseName }}
+    virtualNetworkNameRef:
+      name: {{ $ReleaseName }}
+  providerConfigRef:
+    name: {{ $ReleaseName }}
+
+{{- end }}
+{{- else }}
+---
+  apiVersion: network.azure.upbound.io/v1beta1
+  kind: Subnet
+  metadata:
+    name: default
+  spec:
+    forProvider:
+      addressPrefixes:
+        - "10.0.0.0/24"
+      resourceGroupNameRef:
+        name: {{ $ReleaseName }}
+      virtualNetworkNameRef:
+        name: {{ $ReleaseName }}
+    providerConfigRef:
+      name: {{ $ReleaseName }}
+{{- end }}  

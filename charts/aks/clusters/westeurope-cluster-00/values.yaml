@@ -1,20 +1,30 @@
 # Values file for westeurope-cluster-00
 
-deletionPolicy: "Delete"
+deletionPolicy: Delete
 
 providerConfigSecret: 
-  name: "azure-provider-config"
-  key: "creds"
+  name: azure-provider-config
+  key: creds
 
-location: "West Europe"
+location: West Europe
 
 clusterName: westeurope-cluster-00
 clusterDomain: clusters.sysctls.de
 
+virtualNetwork:
+  addressSpace: 10.64.0.0/16
+  subnets:
+    - name: subnet1
+      addressPrefix: 10.64.0.0/24
+    - name: subnet2
+      addressPrefix: 10.64.1.0/24
+
 additionalNodePools:
   - name: agentpool
+    mode: User
     vmSize: Standard_D4s_v3
     nodeCount: 1
   - name: nodepool
+    mode: User
     vmSize: Standard_D4s_v3
     nodeCount: 1

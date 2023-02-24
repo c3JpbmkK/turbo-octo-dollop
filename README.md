@@ -15,7 +15,9 @@ tree --dirsfirst >> README.md
 │   │   │   ├── nodePools.yaml
 │   │   │   ├── providerConfig.yaml
 │   │   │   ├── resourceGroup.yaml
-│   │   │   └── userAssignedManagedIdentity.yaml
+│   │   │   ├── subnets.yaml
+│   │   │   ├── userAssignedManagedIdentity.yaml
+│   │   │   └── virtual-network.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── argo-cd
@@ -88,7 +90,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-36 directories, 49 files
+36 directories, 51 files
 ```
 
 ---

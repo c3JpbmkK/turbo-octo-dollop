@@ -1,0 +1,12 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: VirtualNetwork
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  forProvider:
+    addressSpace:
+      - {{ .Values.virtualNetwork.addressSpace | default "10.0.0.0/16" }} 
+    location: West Europe
+    resourceGroupName: {{ .Release.Name }}
+  providerConfigRef:
+    name: {{ .Release.Name }}
