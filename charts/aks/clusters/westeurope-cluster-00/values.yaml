@@ -11,7 +11,7 @@ location: "West Europe"
 clusterName: westeurope-cluster-00
 clusterDomain: clusters.sysctls.de
 
-nodePools:
+additionalNodePools:
   - name: agentpool
     vmSize: Standard_DS2_v2
     nodeCount: 1
