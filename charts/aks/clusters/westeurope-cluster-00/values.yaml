@@ -8,6 +8,7 @@ providerConfigSecret:
 
 location: "West Europe"
 
+clusterName: westeurope-cluster-00
 clusterDomain: clusters.sysctls.de
 
 nodePools:
