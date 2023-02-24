@@ -2,11 +2,18 @@
 
 deletionPolicy: "Delete"
 
-location: "West Europe"
-
-clusterDomain: clusters.sysctls.de
-
 providerConfigSecret: 
   name: "azure-provider-config"
   key: "creds"
 
+location: "West Europe"
+
+clusterDomain: clusters.sysctls.de
+
+nodePools:
+  - name: agentpool
+    vmSize: Standard_DS2_v2
+    nodeCount: 1
+  - name: nodepool
+    vmSize: Standard_DS4_v3
+    nodeCount: 1

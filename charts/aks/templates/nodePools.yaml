@@ -1,18 +1,19 @@
+{{- range $nodePool := .Values.nodePools }}
+---
 apiVersion: containerservice.azure.upbound.io/v1beta1
 kind: KubernetesClusterNodePool
 metadata:
   labels:
     kubernetesCluster: '{{ .Release.Name }}'
-  name: natpool
+  name: {{ $nodePool.name }}
 spec:
   forProvider:
     kubernetesClusterIdSelector:
       matchLabels:
         kubernetesCluster: '{{ .Release.Name }}'
-    nodeCount: 1
-    tags:
-      Environment: Production
-    vmSize: Standard_DS2_v2
+    nodeCount: ${{ $nodePool.nodeCount }}
+    vmSize: ${{ $nodePool.vmSize }}
   providerConfigRef:
     name: '{{ .Release.Name }}'
-  
+
+{{- end }}

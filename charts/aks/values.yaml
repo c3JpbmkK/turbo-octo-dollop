@@ -1,5 +1,10 @@
 # Values file for a aks chart
 
+# Specify the secret containing the azure credentionals in the "name" field and 
+# the exact key from the secret to use in the "key" fiekd
+# providerConfigSecret: 
+#   name: "my-provider-config"
+#   key: "creds"
 
 # What should happen to resources provisioned by Crossplane if the corresponding crossplane resources is deleted
 # Possbile options are Delete, Orphan
