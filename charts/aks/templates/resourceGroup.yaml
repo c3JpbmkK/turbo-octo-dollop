@@ -1,11 +1,11 @@
 apiVersion: azure.upbound.io/v1beta1
 kind: ResourceGroup
 metadata:
-  name: '{{ .Release.Name }}'
+  name: {{ .Release.Name }}
   # chore: scope it to a namespace
 spec:
-  deletionPolicy: '{{ .Values.deletionPolicy }}'
+  deletionPolicy: {{ .Values.deletionPolicy }}
   forProvider:
-    location: '{{ .Values.location }}'
+    location: {{ .Values.location }}
   providerConfigRef:
-    name: '{{ .Release.Name }}'
+    name: {{ .Release.Name }}

@@ -1,22 +1,22 @@
 apiVersion: containerservice.azure.upbound.io/v1beta1
 kind: KubernetesCluster
 metadata:
-  name: '{{ .Release.Name }}'
+  name: {{ .Release.Name }}
   labels:
-    kubernetesCluster: '{{ .Release.Name }}'
+    kubernetesCluster: {{ .Release.Name }}
 spec:
   forProvider:
     defaultNodePool:
       - name: agentpool
         nodeCount: 1
         vmSize: Standard_D4s_v3
-    dnsPrefix: '{{ .Release.Name }}'
+    dnsPrefix: {{ .Release.Name }}
     identity:
       - type: SystemAssigned
-    location: '{{ .Values.location }}'
-    resourceGroupName: '{{ .Release.Name }}'
+    location: {{ .Values.location }}
+    resourceGroupName: {{ .Release.Name }}
   providerConfigRef:
-    name: '{{ .Release.Name }}'
+    name: {{ .Release.Name }}
   writeConnectionSecretToRef:
-    name: '{{ .Release.Name }}-connection-secret'
+    name: {{ .Release.Name }}-connection-secret
     namespace: crossplane-system

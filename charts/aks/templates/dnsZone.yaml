@@ -2,11 +2,11 @@ apiVersion: network.azure.upbound.io/v1beta1
 kind: DNSZone
 metadata:
   annotations:
-    crossplane.io/external-name: '{{ .Release.Name }}.{{ .Values.clusterDomain }}'
-  name: '{{ .Release.Name }}'
+    crossplane.io/external-name: {{ .Release.Name }}.{{ .Values.clusterDomain }}
+  name: {{ .Release.Name }}
 spec:
-  deletionPolicy: '{{ .Values.deletionPolicy }}'
+  deletionPolicy: {{ .Values.deletionPolicy }}
   forProvider:
-    resourceGroupName: '{{ .Release.Name }}'
+    resourceGroupName: {{ .Release.Name }}
   providerConfigRef:
-    name: '{{ .Release.Name }}'
+    name: {{ .Release.Name }}

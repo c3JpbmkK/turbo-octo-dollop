@@ -1,8 +1,8 @@
 # apiVersion: batch/v1
 # kind: Job
 # metadata:
-#   name: '{{ .Release.Name }}-dns'
-#   namespace: '{{ .Release.Namespace }}'
+#   name: {{ .Release.Name }}-dns
+#   namespace: {{ .Release.Namespace }}
 #   annotations:
 #     helm.sh/hook: post-install, post-upgrade
 #     helm.sh/hook-delete-policy: hook-succeeded
@@ -16,28 +16,28 @@
 #   template:
 #     metadata:
 #       annotations:
-#         azure.workload.identity/use: 'true'
+#         azure.workload.identity/use: true
 #       labels:
-#         azure.workload.identity/use: 'true'
+#         azure.workload.identity/use: true
 #     spec:
-#       serviceAccountName: '{{ .Release.Name }}-dns'
+#       serviceAccountName: {{ .Release.Name }}-dns
 #       automountServiceAccountToken: true
 #       containers:
 #       - name: azure-cli
 #         image: mcr.microsoft.com/azure-cli:latest
 #         env:
 #           - name: DNS_ZONE_SUBSCRIPTION
-#             value: '{{ .Values.dnsZoneSubscription }}'
+#             value: {{ .Values.dnsZoneSubscription }}
 #           - name: DNS_ZONE_CONTRIBUTOR_IDENTITY
-#             value: '{{ .Values.dnsZoneContributorIdentity }}'
+#             value: {{ .Values.dnsZoneContributorIdentity }}
 #           - name: CLUSTER_TENANT
-#             value: '{{ .Values.dnsZoneContributorTenant }}'
+#             value: {{ .Values.dnsZoneContributorTenant }}
 #           - name: CLUSTER_NAME
-#             value: '{{ .Values.clusterName }}'
+#             value: {{ .Values.clusterName }}
 #           - name: CLUSTER_DOMAIN
-#             value: '{{ .Values.dnsZoneName }}'
+#             value: {{ .Values.dnsZoneName }}
 #           - name: RESOURCE_GROUP
-#             value: '{{ .Values.dnsZoneResourceGroup }}'
+#             value: {{ .Values.dnsZoneResourceGroup }}
 #         command:
 #           - sh
 #           - -c
@@ -48,8 +48,8 @@
 #             az aks install-cli
 
 #             # Get IP address of the nginx loadbalancer service
-#             Response=$(kubectl --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)" get --raw='/api/v1/namespaces/ingress-nginx/services')
-#             LB_IP=$(echo "$Response" | jq -r '.items[]|select(.spec.type == "LoadBalancer").status.loadBalancer.ingress[].ip')
+#             Response=$(kubectl --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)" get --raw=/api/v1/namespaces/ingress-nginx/services)
+#             LB_IP=$(echo "$Response" | jq -r .items[]|select(.spec.type == "LoadBalancer").status.loadBalancer.ingress[].ip)
 
 #             # Login
 #             az login --service-principal -u "$DNS_ZONE_CONTRIBUTOR_IDENTITY" -t "$CLUSTER_TENANT" --federated-token $(cat /var/run/secrets/azure/tokens/azure-identity-token)
