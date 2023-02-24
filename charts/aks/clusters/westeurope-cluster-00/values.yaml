@@ -13,8 +13,8 @@ clusterDomain: clusters.sysctls.de
 
 additionalNodePools:
   - name: agentpool
-    vmSize: Standard_DS2_v2
+    vmSize: Standard_D4s_v3
     nodeCount: 1
   - name: nodepool
-    vmSize: Standard_DS4_v3
+    vmSize: Standard_D4s_v3
     nodeCount: 1

@@ -9,7 +9,7 @@ spec:
     defaultNodePool:
       - name: default
         nodeCount: 1
-        vmSize: Standard_D4s_v3
+        vmSize: Standard_DS2_v2
     dnsPrefix: {{ .Release.Name }}
     identity:
       - type: SystemAssigned
