@@ -56,22 +56,20 @@ tree --dirsfirst >> README.md
 │       └── values.yaml
 ├── clusters
 │   ├── bootstrap
-│   │   ├── clusters
-│   │   │   └── westeurope-cluster-00.yaml
-│   │   ├── provider
+│   │   ├── apps
+│   │   ├── credentials
 │   │   │   ├── azure-provider-config.yaml
 │   │   │   └── provider.yaml
+│   │   ├── infra
+│   │   │   └── westeurope-cluster-00.yaml
+│   │   ├── scripts
+│   │   │   ├── argo-cd.sh
+│   │   │   ├── crossplane.sh
+│   │   │   └── sealed-secrets.sh
 │   │   ├── install.sh
 │   │   ├── README.md
 │   │   └── teardown.sh
-│   └── visual
-│       ├── templates
-│       │   ├── 00-application-ingress-nginx.yaml
-│       │   ├── 01-application-cert-manager.yaml
-│       │   ├── 02-application-argocd.yaml
-│       │   └── 03-application-crossplane.yaml
-│       ├── application.yaml
-│       └── project.yaml
+│   └── westeurope-cluster-00
 ├── hooks
 │   ├── pre-commit
 │   └── README.md
@@ -90,7 +88,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-36 directories, 51 files
+37 directories, 48 files
 ```
 
 ---
