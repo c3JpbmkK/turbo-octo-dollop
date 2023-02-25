@@ -1,5 +1,6 @@
 # https://helm.sh/docs/chart_template_guide/variables/
 {{- $ReleaseName := .Release.Name -}}
+{{- $ProviderName := .Values.providerConfig.name }}
 {{- if .Values.virtualNetwork.subnets }}
 {{- range $subnet := .Values.virtualNetwork.subnets }}
 ---
@@ -16,7 +17,7 @@ spec:
     virtualNetworkNameRef:
       name: {{ $ReleaseName }}
   providerConfigRef:
-    name: {{ .Values.providerConfig.name }}
+    name: {{ $ProviderName }}
 
 {{- end }}
 {{- else }}
@@ -34,5 +35,5 @@ spec:
       virtualNetworkNameRef:
         name: {{ $ReleaseName }}
     providerConfigRef:
-      name: {{ .Values.providerConfig.name }}
+      name: {{ $ProviderName }}
 {{- end }}  

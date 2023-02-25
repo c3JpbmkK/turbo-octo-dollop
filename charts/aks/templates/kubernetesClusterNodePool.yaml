@@ -1,5 +1,6 @@
 # https://helm.sh/docs/chart_template_guide/variables/
 {{- $ReleaseName := .Release.Name -}}
+{{- $ProviderName := .Values.providerConfig.name }}
 {{- range $nodePool := .Values.additionalNodePools }}
 ---
 apiVersion: containerservice.azure.upbound.io/v1beta1
@@ -17,6 +18,6 @@ spec:
     nodeCount: {{ $nodePool.nodeCount }}
     vmSize: {{ $nodePool.vmSize }}
   providerConfigRef:
-    name: {{ .Values.providerConfig.name }}
+    name: {{ $ProviderName }}
 
 {{- end }}
