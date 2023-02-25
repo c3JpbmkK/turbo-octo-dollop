@@ -2,7 +2,7 @@ apiVersion: network.azure.upbound.io/v1beta1
 kind: VirtualNetwork
 metadata:
   annotations:
-    argocd.argoproj.io/hook: Sync
+    # argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "1"
   labels:
     network.azure.upbound.io/virtualNetwork: {{ .Release.Name }}

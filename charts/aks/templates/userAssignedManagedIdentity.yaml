@@ -2,7 +2,7 @@ apiVersion: managedidentity.azure.upbound.io/v1beta1
 kind: UserAssignedIdentity
 metadata:
   annotations:
-    argocd.argoproj.io/hook: Sync
+    # argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "1"
   labels:
     managedidentity.azure.upbound.io/userAssignedIdentity: {{ .Release.Name }}
