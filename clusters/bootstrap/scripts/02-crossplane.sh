@@ -14,7 +14,14 @@ PROVIDER_NAME="upbound-provider-azure"
 PROVIDER_VERSION="v0.28.0"
 PROVIDER_URL="xpkg.upbound.io/upbound/provider-azure"
 
-cat <<EOF | kubectl apply --dry-run=client -o yaml -f -
+until kubectl get crds providers.pkg.crossplane.io &>/dev/null ; do
+  sleep 5
+  echo "Waiting for Providers CRD to become available"
+done
+echo "Providers CRD ready"
+
+echo "Creating provider from package ${PROVIDER_URL}"
+cat <<EOF | kubectl apply -f -
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
@@ -24,9 +31,12 @@ spec:
 EOF
 
 # Wait for provier to become available
-Provider=$(kubectl get provider "${PROVIDER_NAME}" -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')
+Provider=$(kubectl get provider "${PROVIDER_NAME}" -o json 2>/dev/null | jq -er 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name' 2>/dev/null)
 while [ -z "$Provider" ] ; do
     echo "Waiting for provider to become healthy"
     sleep 5
-    Provider=$(kubectl get provider "${PROVIDER_NAME}" -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')
+    Provider=$(kubectl get provider "${PROVIDER_NAME}" -o json 2>/dev/null | jq -er 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name' 2>/dev/null)
 done
+
+echo "Installing supplied crdentials"
+kubectl apply -f credentials/

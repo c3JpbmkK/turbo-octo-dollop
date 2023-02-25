@@ -64,12 +64,12 @@ tree --dirsfirst >> README.md
 │   │   ├── scripts
 │   │   │   ├── 00-sealed-secrets.sh
 │   │   │   ├── 01-argo-cd.sh
-│   │   │   ├── 02-crossplane.sh
-│   │   │   ├── tls.crt
-│   │   │   └── tls.key
+│   │   │   └── 02-crossplane.sh
 │   │   ├── install.sh
 │   │   ├── README.md
-│   │   └── teardown.sh
+│   │   ├── teardown.sh
+│   │   ├── tls.crt
+│   │   └── tls.key
 │   └── westeurope-cluster-00
 ├── hooks
 │   ├── pre-commit

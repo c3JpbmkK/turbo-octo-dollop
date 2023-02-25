@@ -24,7 +24,7 @@ if [ -f "$PUBLIC_KEY" ] && [ -f "$PRIVATE_KEY" ] ; then
     kubectl -n kube-system label secret "$CUSTOM_SECRET" sealedsecrets.bitnami.com/sealed-secrets-key=active
     kubectl -n kube-system delete pods -l app.kubernetes.io/name=sealed-secrets 
     until $(kubectl -n kube-system logs -l app.kubernetes.io/name=sealed-secrets 2>/dev/null | grep -q "$CUSTOM_SECRET") ; do
-        sleep 1
+        sleep 5
         echo "Waiting for key pair to be loaded"
     done
     echo "Existing key pair loaded into sealed-secrets controller"

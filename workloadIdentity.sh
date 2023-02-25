@@ -6,7 +6,8 @@ az feature register --name EnableWorkloadIdentityPreview --namespace Microsoft.C
 # Wait for the feature to complete registration
 Status=$(az feature show --name EnableWorkloadIdentityPreview  --namespace microsoft.ContainerService --query properties.state --output tsv)
 while [ "$Status" != "Registered" ] ; do
-    echo "Waiting for feature \"EnableWorkloadIdentityPreview\" registration to complete" && sleep 30
+    sleep 30
+    echo "Waiting for feature \"EnableWorkloadIdentityPreview\" registration to complete"
     Status=$(az feature show --name EnableWorkloadIdentityPreview  --namespace microsoft.ContainerService --query properties.state --output tsv)
 done
 echo "Feature \"EnableWorkloadIdentityPreview\" registered"
