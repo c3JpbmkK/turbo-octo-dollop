@@ -22,10 +22,12 @@ virtualNetwork:
 
 additionalNodePools:
   - name: infrapool
+    subnet: infrapool
     mode: User
     vmSize: Standard_D4s_v3
     nodeCount: 1
   - name: workloadpool
+    subnet: workloadpool
     mode: User
     vmSize: Standard_D4s_v3
     nodeCount: 1

@@ -2,11 +2,15 @@ apiVersion: managedidentity.azure.upbound.io/v1beta1
 kind: UserAssignedIdentity
 metadata:
   name: {{ .Release.Name }}
+  labels:
+    managedidentity.azure.upbound.io/userAssignedIdentity: {{ .Release.Name }}
 spec:
   deletionPolicy: {{ .Values.deletionPolicy }}
   forProvider:
     location: {{ .Values.location }}
     name: {{ .Release.Name }}
-    resourceGroupName: {{ .Release.Name }}
+    resourceGroupNameSelector:
+      matchLabels:
+        azure.upbound.io/resourceGroup: {{ .Release.Name }}
   providerConfigRef:
     name: {{ .Values.providerConfig.name }}

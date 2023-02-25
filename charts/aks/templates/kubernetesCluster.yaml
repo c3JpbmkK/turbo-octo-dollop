@@ -3,18 +3,23 @@ kind: KubernetesCluster
 metadata:
   name: {{ .Release.Name }}
   labels:
-    kubernetesCluster: {{ .Release.Name }}
+    containerservice.azure.upbound.io/kubernetesCluster: {{ .Release.Name }}
 spec:
   forProvider:
     defaultNodePool:
       - name: default
         nodeCount: 1
         vmSize: Standard_DS2_v2
+        podSubnetIdSelector: 
+          matchLabels:
+            network.azure.upbound.io/subnet: default
     dnsPrefix: {{ .Release.Name }}
     identity:
       - type: SystemAssigned
     location: {{ .Values.location }}
-    resourceGroupName: {{ .Release.Name }}
+    resourceGroupNameSelector:
+      matchLabels:
+        azure.upbound.io/resourceGroup: {{ .Release.Name }}
   providerConfigRef:
     name: {{ .Values.providerConfig.name }}
   writeConnectionSecretToRef:

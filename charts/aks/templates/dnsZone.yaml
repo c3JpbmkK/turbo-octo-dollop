@@ -3,10 +3,14 @@ kind: DNSZone
 metadata:
   annotations:
     crossplane.io/external-name: {{ .Release.Name }}.{{ .Values.clusterDomain }}
+  labels:
+    network.azure.upbound.io/dnsZone: {{ .Release.Name }}
   name: {{ .Release.Name }}
 spec:
   deletionPolicy: {{ .Values.deletionPolicy }}
   forProvider:
-    resourceGroupName: {{ .Release.Name }}
+    resourceGroupNameSelector:
+      matchLabels:
+        azure.upbound.io/resourceGroup: {{ .Release.Name }}
   providerConfigRef:
     name: {{ .Values.providerConfig.name }}
