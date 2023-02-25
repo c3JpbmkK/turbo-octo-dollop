@@ -1,0 +1,13 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: PublicIP
+metadata:
+  labels:
+    network.azure.upbound.io/publicIP: {{ .Release.Name }}
+  name: {{ .Release.Name }}
+spec:
+  forProvider:
+    allocationMethod: {{ .Values.publicIP.allocationMethod }}
+    location: {{ .Values.location }}
+    resourceGroupName: mc_{{ .Release.Name }}_{{ .Release.Name }}_{{ .Values.location }}
+  providerConfigRef:
+    name: {{ .Values.providerConfig.name }}
