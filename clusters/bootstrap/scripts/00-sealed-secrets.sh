@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Using namespace kube-system for cluster scoped installation
 
 helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
@@ -20,7 +22,7 @@ export CUSTOM_SECRET="custom-sealed-secrets-keys"
 
 if [ -f "$PUBLIC_KEY" ] && [ -f "$PRIVATE_KEY" ] ; then
     echo "Loading existing key pair"
-    kubectl -n kube-system create secret tls "$CUSTOM_SECRET" --cert="$PUBLIC_KEY" --key="$PRIVATE_KEY"
+    kubectl -n kube-system create secret tls "$CUSTOM_SECRET" --cert="$PUBLIC_KEY" --key="$PRIVATE_KEY" 2>/dev/null || echo "Secret already exists"
     kubectl -n kube-system label secret "$CUSTOM_SECRET" sealedsecrets.bitnami.com/sealed-secrets-key=active
     kubectl -n kube-system delete pods -l app.kubernetes.io/name=sealed-secrets 
     until $(kubectl -n kube-system logs -l app.kubernetes.io/name=sealed-secrets 2>/dev/null | grep -q "$CUSTOM_SECRET") ; do

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 helm repo add crossplane-stable https://charts.crossplane.io/stable
 helm repo update
 
@@ -21,7 +23,7 @@ function installPackage {
   PROVIDER_URL=$2
   PROVIDER_VERSION=$3
 
-  echo "Creating provider from package ${PROVIDER_URL}"
+  echo "Creating ${PROVIDER_NAME} from package ${PROVIDER_URL}"
   cat <<EOF | kubectl apply -f -
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
@@ -32,12 +34,14 @@ spec:
 EOF
 
   # Wait for provier to become available
-  Provider=$(kubectl get provider "${PROVIDER_NAME}" -o json 2>/dev/null | jq -er 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name' 2>/dev/null)
+  set +e
+  Provider=$(kubectl get provider.pkg "${PROVIDER_NAME}" -o json 2>/dev/null | jq -er 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name' 2>/dev/null)
   while [ -z "$Provider" ] ; do
-      echo "Waiting for provider to become healthy"
+      echo "Waiting for ${PROVIDER_NAME} to become healthy"
       sleep 5
-      Provider=$(kubectl get provider "${PROVIDER_NAME}" -o json 2>/dev/null | jq -er 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name' 2>/dev/null)
-  done  
+      Provider=$(kubectl get provider.pkg "${PROVIDER_NAME}" -o json 2>/dev/null | jq -er 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name' 2>/dev/null)
+  done
+  set -e
 }
 
 echo "Installing required packages"
