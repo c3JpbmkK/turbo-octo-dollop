@@ -107,4 +107,5 @@ File name | Line number | Chore
 ---|---|---|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|7| Advanced management of sealed-secrets sealing key secret|
+[clusters/bootstrap/apps/westeurope-cluster-00.yaml](clusters/bootstrap/apps/westeurope-cluster-00.yaml)|14| change to true after development|
 

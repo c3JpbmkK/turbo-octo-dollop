@@ -11,7 +11,8 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   syncPolicy:
-    preserveResourcesOnDeletion: true
+    # chore: change to true after development
+    preserveResourcesOnDeletion: false
   generators:
   - list:
       elements:
