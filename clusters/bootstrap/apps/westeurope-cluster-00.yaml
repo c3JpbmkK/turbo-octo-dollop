@@ -39,17 +39,17 @@ spec:
       - repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
         targetRevision: '7-tree'
         ref: values
-      - chart: {{ chart }}
-        repoURL: {{ repoURL }}
-        targetRevision: {{ targetRevision }}
+      - chart: '{{ chart }}'
+        repoURL: '{{ repoURL }}'
+        targetRevision: '{{ targetRevision }}'
         helm:
-          releaseName: {{ chart }}
+          releaseName: '{{ chart }}'
           valueFiles:
             - $values/charts/{{ chart }}/values.yaml
             - $values/charts/{{ chart }}/clusters/westeurope-cluster-00/values.yaml
       destination:
         name: westeurope-cluster-00
-        namespace: {{ namespace }}
+        namespace: '{{ namespace }}'
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
