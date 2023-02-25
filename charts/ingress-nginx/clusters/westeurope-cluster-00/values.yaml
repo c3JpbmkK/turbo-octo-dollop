@@ -1,23 +1,14 @@
 # Values file for ingress-nginx
 
-clusterName: visual
-
-dnsZoneName: clusters.sysctls.de
-dnsZoneResourceGroup: dz-cluster
-dnsZoneSubscription: cf897062-5b9b-4b10-8897-6773333de4a4
-dnsZoneContributorIdentity: 0ea27f8c-6f3b-4f50-8002-ab01b6770d06
-dnsZoneContributorTenant: 8dd2b4a0-d0ce-44ca-b481-190c81849499
-
-nginx:
-  defaultBackend:
-    enabled: true
-  controller:
-    resources:
-      limits:
-        cpu: 1
-        memory: 1Gi
-      requests:
-        cpu: 500m
-        memory: 500Mi
-    autoscaling:
-      enabled: false
+defaultBackend:
+  enabled: true
+controller:
+  resources:
+    limits:
+      cpu: 1
+      memory: 1Gi
+    requests:
+      cpu: 500m
+      memory: 500Mi
+  autoscaling:
+    enabled: false

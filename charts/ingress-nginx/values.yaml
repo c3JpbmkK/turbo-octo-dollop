@@ -1,15 +1,14 @@
 # Values file for ingress-nginx
 
-nginx:
-  defaultBackend:
+defaultBackend:
+  enabled: true
+controller:
+  service:
+    annotations:
+      service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
+  autoscaling:
     enabled: true
-  controller:
-    service:
-      annotations:
-        service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
-    autoscaling:
-      enabled: true
-      maxReplicas: 5
-      minReplicas: 1
-      targetCPUUtilizationPercentage: 50
-      targetMemoryUtilizationPercentage: 50
+    maxReplicas: 5
+    minReplicas: 1
+    targetCPUUtilizationPercentage: 50
+    targetMemoryUtilizationPercentage: 50
