@@ -3,7 +3,7 @@
 deletionPolicy: Delete
 
 providerConfigSecret: 
-  name: azure-provider-config
+  name: azure-providerconfig
   key: creds
 
 location: West Europe
@@ -14,17 +14,19 @@ clusterDomain: clusters.sysctls.de
 virtualNetwork:
   addressSpace: 10.64.0.0/16
   subnets:
-    - name: subnet1
-      addressPrefix: 10.64.0.0/24
-    - name: subnet2
-      addressPrefix: 10.64.1.0/24
+    - name: default
+      addressPrefix: 10.64.0.0/22
+    - name: infrapool
+      addressPrefix: 10.64.4.0/22
+    - name: workloadpool
+      addressPrefix: 10.64.8.0/22
 
 additionalNodePools:
-  - name: agentpool
+  - name: infrapool
     mode: User
     vmSize: Standard_D4s_v3
     nodeCount: 1
-  - name: nodepool
+  - name: workloadpool
     mode: User
     vmSize: Standard_D4s_v3
     nodeCount: 1

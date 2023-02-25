@@ -11,8 +11,8 @@ tree --dirsfirst >> README.md
 │   │   ├── templates
 │   │   │   ├── dnsZoneUpdate-job.yaml.txt
 │   │   │   ├── dnsZone.yaml
-│   │   │   ├── managedCluster.yaml
-│   │   │   ├── nodePools.yaml
+│   │   │   ├── kubernetesClusterNodePool.yaml
+│   │   │   ├── kubernetesCluster.yaml
 │   │   │   ├── providerConfig.yaml
 │   │   │   ├── resourceGroup.yaml
 │   │   │   ├── subnets.yaml
