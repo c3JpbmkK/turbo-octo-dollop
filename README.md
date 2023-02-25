@@ -13,7 +13,6 @@ tree --dirsfirst >> README.md
 │   │   │   ├── dnsZone.yaml
 │   │   │   ├── kubernetesClusterNodePool.yaml
 │   │   │   ├── kubernetesCluster.yaml
-│   │   │   ├── providerConfig.yaml
 │   │   │   ├── resourceGroup.yaml
 │   │   │   ├── subnets.yaml
 │   │   │   ├── userAssignedManagedIdentity.yaml
@@ -58,7 +57,8 @@ tree --dirsfirst >> README.md
 │   ├── bootstrap
 │   │   ├── apps
 │   │   ├── credentials
-│   │   │   └── azure-providerconfig.yaml
+│   │   │   ├── azure-providerconfig.yaml
+│   │   │   └── providerConfig.yaml
 │   │   ├── infra
 │   │   │   └── westeurope-cluster-00.yaml
 │   │   ├── scripts
