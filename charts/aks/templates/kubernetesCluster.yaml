@@ -17,7 +17,7 @@ spec:
         vnetSubnetIdSelector: 
           matchLabels:
             network.azure.upbound.io/subnet: default
-    oidcIssuerEnabled: {{ .Values.kubernetesCluster.networkProfile.oidcIssuerEnabled }}
+    oidcIssuerEnabled: {{ .Values.kubernetesCluster.oidcIssuerEnabled }}
     workloadIdentityEnabled: {{ .Values.kubernetesCluster.workloadIdentityEnabled }}
     networkProfile: 
     - networkPlugin: azure
