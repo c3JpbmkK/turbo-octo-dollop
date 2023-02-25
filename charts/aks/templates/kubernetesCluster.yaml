@@ -19,7 +19,7 @@ spec:
             network.azure.upbound.io/subnet: default
     workloadIdentityEnabled: {{ .Values.kubernetesCluster.workloadIdentityEnabled }}
     networkProfile: 
-    - oidcIssuerEnabled: {{ .Values.kubernetesCluster.oidcIssuerEnabled }}
+    - oidcIssuerEnabled: {{ .Values.kubernetesCluster.networkProfile.oidcIssuerEnabled }}
       networkPlugin: azure
     dnsPrefix: {{ .Release.Name }}
     identity:
