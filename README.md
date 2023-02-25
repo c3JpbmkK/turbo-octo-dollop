@@ -11,7 +11,6 @@ tree --dirsfirst >> README.md
 │   │   ├── templates
 │   │   │   ├── cluster.yaml
 │   │   │   ├── dnsARecord.yaml
-│   │   │   ├── dnsZoneUpdate-job.yaml.txt
 │   │   │   ├── dnsZone.yaml
 │   │   │   ├── kubernetesClusterNodePool.yaml
 │   │   │   ├── kubernetesCluster.yaml
@@ -82,7 +81,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-35 directories, 44 files
+35 directories, 43 files
 ```
 
 ---
@@ -98,7 +97,6 @@ File name | Line number | Todo
 
 File name | Line number | Chore
 ---|---|---|
-[charts/aks/templates/dnsZoneUpdate-job.yaml.txt](charts/aks/templates/dnsZoneUpdate-job.yaml.txt)|56| remove this line if design is accepted|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|7| Advanced management of sealed-secrets sealing key secret|
 
