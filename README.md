@@ -26,21 +26,29 @@ tree --dirsfirst >> README.md
 │   │   ├── clusters
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
+│   │   ├── templates
+│   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── cert-manager
 │   │   ├── clusters
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
+│   │   ├── templates
+│   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── crossplane
 │   │   ├── clusters
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
+│   │   ├── templates
+│   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   └── ingress-nginx
 │       ├── clusters
 │       │   └── westeurope-cluster-00
 │       │       └── values.yaml
+│       ├── templates
+│       ├── Chart.yaml
 │       └── values.yaml
 ├── clusters
 │   ├── bootstrap
@@ -81,7 +89,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-35 directories, 43 files
+39 directories, 47 files
 ```
 
 ---
