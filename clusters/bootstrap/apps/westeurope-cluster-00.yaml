@@ -10,6 +10,8 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: true
   generators:
   - list:
       elements:
