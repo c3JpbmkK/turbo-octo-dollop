@@ -5,6 +5,8 @@
 apiVersion: network.azure.upbound.io/v1beta1
 kind: DNSARecord
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "6"
   name: {{ $appName }}
 spec:
   forProvider:
