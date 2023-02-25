@@ -30,7 +30,7 @@ spec:
   metadata:
     name: default
     labels:
-      network.azure.upbound.io/subnet: {{ $subnet.name }}
+      network.azure.upbound.io/subnet: default
   spec:
     forProvider:
       addressPrefixes:
