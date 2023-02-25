@@ -3,7 +3,7 @@ kind: UserAssignedIdentity
 metadata:
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     managedidentity.azure.upbound.io/userAssignedIdentity: {{ .Release.Name }}
   name: {{ .Release.Name }}

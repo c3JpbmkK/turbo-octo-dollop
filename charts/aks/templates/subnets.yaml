@@ -9,7 +9,7 @@ kind: Subnet
 metadata:
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     network.azure.upbound.io/subnet: {{ $subnet.name }}
   name: {{ $subnet.name }}
@@ -34,7 +34,7 @@ spec:
   metadata:
     annotations:
       argocd.argoproj.io/hook: Sync
-      argocd.argoproj.io/sync-wave: "3"
+      argocd.argoproj.io/sync-wave: "2"
     labels:
       network.azure.upbound.io/subnet: default
     name: default

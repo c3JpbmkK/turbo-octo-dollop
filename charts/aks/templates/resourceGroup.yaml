@@ -3,7 +3,7 @@ kind: ResourceGroup
 metadata:
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "0"
   labels:
     azure.upbound.io/resourceGroup: {{ .Release.Name }}
   name: {{ .Release.Name }}

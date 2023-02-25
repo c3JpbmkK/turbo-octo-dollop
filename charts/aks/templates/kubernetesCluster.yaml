@@ -3,7 +3,7 @@ kind: KubernetesCluster
 metadata:
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-wave: "3"
   labels:
     containerservice.azure.upbound.io/kubernetesCluster: {{ .Release.Name }}
   name: {{ .Release.Name }}

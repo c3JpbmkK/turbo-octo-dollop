@@ -8,7 +8,7 @@ kind: KubernetesClusterNodePool
 metadata:
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "4"
   labels:
     containerservice.azure.upbound.io/kubernetesCluster: {{ $nodePool.name }}
   name: {{ $nodePool.name }}
