@@ -20,6 +20,7 @@ spec:
       virtualNetworkNameSelector:
         matchLabels:
           network.azure.upbound.io/virtualNetwork: {{ $ReleaseName }}
+  providerConfigRef:
     name: {{ $ProviderName }}
 
 {{- end }}
