@@ -22,6 +22,10 @@ virtualNetwork:
 
 publicIP:
   allocationMethod: Static
+  apps:
+    - argocd
+    - jaeger
+    - grafana
 
 kubernetesCluster:
   skuTier: Free

@@ -1,0 +1,23 @@
+{{- $ReleaseName := .Release.Name -}}
+{{- $ProviderName := .Values.providerConfig.name }}
+{{- range $appName := .Values.publicIP.apps }}
+---
+apiVersion: network.azure.upbound.io/v1beta1
+kind: DNSARecord
+metadata:
+  name: {{ $appName }}
+spec:
+  forProvider:
+    ttl: 300
+    targetResourceIdSelector:
+      matchLabels:
+        network.azure.upbound.io/publicIP: {{ $ReleaseName }}
+    resourceGroupNameSelector:
+      matchLabels:
+        azure.upbound.io/resourceGroup: {{ $ReleaseName }}
+    zoneNameSelector:
+      matchLabels:
+        network.azure.upbound.io/dnsZone: {{ $ReleaseName }}
+  providerConfigRef:
+    name: {{ $ProviderName }}
+{{- end }}
