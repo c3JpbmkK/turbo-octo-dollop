@@ -2,7 +2,6 @@ apiVersion: network.azure.upbound.io/v1beta1
 kind: DNSZone
 metadata:
   annotations:
-    # argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "1"
     crossplane.io/external-name: {{ .Release.Name }}.{{ .Values.clusterDomain }}
   labels:

@@ -14,6 +14,7 @@ tree --dirsfirst >> README.md
 │   │   │   ├── dnsZone.yaml
 │   │   │   ├── kubernetesClusterNodePool.yaml
 │   │   │   ├── kubernetesCluster.yaml
+│   │   │   ├── provider.yaml
 │   │   │   ├── resourceGroup.yaml
 │   │   │   ├── subnets.yaml
 │   │   │   ├── userAssignedManagedIdentity.yaml
@@ -79,7 +80,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-35 directories, 41 files
+35 directories, 42 files
 ```
 
 ---
