@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: westeurope-cluster-00-apps
+  namespace: argocd
+  labels:
+    cluster: westeurope-cluster-00
+    topology.kubernetes.io/region: westeurope
+  # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  generators:
+    - git:
+        repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+        revision: '7-tree'
+        directories:
+        - path: charts
+        - path: charts/aks
+          exclude: true
+  template:
+    metadata:
+      name: 'westeurope-cluster-00-{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+        targetRevision: '7-tree'
+        path: '{{path}}'
+      destination:
+        name: 'westeurope-cluster-00'
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        - ApplyOutOfSyncOnly=true
+        # WARNING: DELETION WILL PROPAGATE IF THIS OPTION IS USED TOGETHER WITH FINALIZER
+        - PrunePropagationPolicy=foreground
+        automated:
+          prune: true
+          selfHeal: true
+          project: westeurope-cluster-00

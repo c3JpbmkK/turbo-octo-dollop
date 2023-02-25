@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: westeurope-cluster-00
+  name: westeurope-cluster-00-infra
   namespace: argocd
   labels:
     cluster: westeurope-cluster-00

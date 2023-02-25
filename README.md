@@ -9,6 +9,7 @@ tree --dirsfirst >> README.md
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── templates
+│   │   │   ├── cluster.yaml
 │   │   │   ├── dnsZoneUpdate-job.yaml.txt
 │   │   │   ├── dnsZone.yaml
 │   │   │   ├── kubernetesClusterNodePool.yaml
@@ -90,7 +91,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-38 directories, 49 files
+38 directories, 50 files
 ```
 
 ---
