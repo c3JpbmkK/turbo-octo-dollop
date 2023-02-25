@@ -22,8 +22,8 @@ virtualNetwork:
 
 kubernetesCluster:
   skuTier: Free
-  networkProfile:
-    oidcIssuerEnabled: true
+  # networkProfile:
+  oidcIssuerEnabled: true
   workloadIdentityEnabled: true
 
 additionalNodePools:
