@@ -20,6 +20,9 @@ spec:
     podSubnetIdSelector: 
       matchLabels:
         network.azure.upbound.io/subnet: {{ $nodePool.subnet }}
+    vnetSubnetIdSelector: 
+      matchLabels:
+        network.azure.upbound.io/subnet: {{ $nodePool.subnet }}
   providerConfigRef:
     name: {{ $ProviderName }}
 

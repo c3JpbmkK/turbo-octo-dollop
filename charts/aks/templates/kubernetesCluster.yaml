@@ -13,6 +13,9 @@ spec:
         podSubnetIdSelector: 
           matchLabels:
             network.azure.upbound.io/subnet: default
+        vnetSubnetIdSelector: 
+          matchLabels:
+            network.azure.upbound.io/subnet: default    
     dnsPrefix: {{ .Release.Name }}
     identity:
       - type: SystemAssigned
