@@ -1,9 +1,12 @@
 apiVersion: managedidentity.azure.upbound.io/v1beta1
 kind: UserAssignedIdentity
 metadata:
-  name: {{ .Release.Name }}
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     managedidentity.azure.upbound.io/userAssignedIdentity: {{ .Release.Name }}
+  name: {{ .Release.Name }}
 spec:
   deletionPolicy: {{ .Values.deletionPolicy }}
   forProvider:

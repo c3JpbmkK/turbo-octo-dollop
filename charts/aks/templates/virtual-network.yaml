@@ -1,9 +1,12 @@
 apiVersion: network.azure.upbound.io/v1beta1
 kind: VirtualNetwork
 metadata:
-  name: {{ .Release.Name }}
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     network.azure.upbound.io/virtualNetwork: {{ .Release.Name }}
+  name: {{ .Release.Name }}
 spec:
   forProvider:
     addressSpace:

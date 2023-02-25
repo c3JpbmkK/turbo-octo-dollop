@@ -1,9 +1,12 @@
 apiVersion: containerservice.azure.upbound.io/v1beta1
 kind: KubernetesCluster
 metadata:
-  name: {{ .Release.Name }}
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "4"
   labels:
     containerservice.azure.upbound.io/kubernetesCluster: {{ .Release.Name }}
+  name: {{ .Release.Name }}
 spec:
   forProvider:
     skuTier: {{ .Values.kubernetesCluster.skuTier }}

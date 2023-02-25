@@ -108,7 +108,6 @@ File name | Line number | Todo
 File name | Line number | Chore
 ---|---|---|
 [charts/aks/templates/dnsZoneUpdate-job.yaml.txt](charts/aks/templates/dnsZoneUpdate-job.yaml.txt)|56| remove this line if design is accepted|
-[charts/aks/templates/resourceGroup.yaml](charts/aks/templates/resourceGroup.yaml)|7| scope it to a namespace|
 [charts/ingress-nginx/templates/dns-job.yaml](charts/ingress-nginx/templates/dns-job.yaml)|56| remove this line if design is accepted|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|7| Advanced management of sealed-secrets sealing key secret|

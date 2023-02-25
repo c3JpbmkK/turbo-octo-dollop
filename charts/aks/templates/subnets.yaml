@@ -7,9 +7,12 @@
 apiVersion: network.azure.upbound.io/v1beta1
 kind: Subnet
 metadata:
-  name: {{ $subnet.name }}
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "3"
   labels:
     network.azure.upbound.io/subnet: {{ $subnet.name }}
+  name: {{ $subnet.name }}
 spec:
   forProvider:
     addressPrefixes:
@@ -29,9 +32,12 @@ spec:
   apiVersion: network.azure.upbound.io/v1beta1
   kind: Subnet
   metadata:
-    name: default
+    annotations:
+      argocd.argoproj.io/hook: Sync
+      argocd.argoproj.io/sync-wave: "3"
     labels:
       network.azure.upbound.io/subnet: default
+    name: default
   spec:
     forProvider:
       addressPrefixes:

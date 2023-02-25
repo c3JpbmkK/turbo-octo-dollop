@@ -6,6 +6,9 @@
 apiVersion: containerservice.azure.upbound.io/v1beta1
 kind: KubernetesClusterNodePool
 metadata:
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "5"
   labels:
     containerservice.azure.upbound.io/kubernetesCluster: {{ $nodePool.name }}
   name: {{ $nodePool.name }}
