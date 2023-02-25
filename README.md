@@ -58,14 +58,16 @@ tree --dirsfirst >> README.md
 │   ├── bootstrap
 │   │   ├── apps
 │   │   ├── credentials
-│   │   │   ├── azure-provider-config.yaml
+│   │   │   ├── azure-providerconfig.yaml
 │   │   │   └── provider.yaml
 │   │   ├── infra
 │   │   │   └── westeurope-cluster-00.yaml
 │   │   ├── scripts
-│   │   │   ├── argo-cd.sh
-│   │   │   ├── crossplane.sh
-│   │   │   └── sealed-secrets.sh
+│   │   │   ├── 00-sealed-secrets.sh
+│   │   │   ├── 01-argo-cd.sh
+│   │   │   ├── 02-crossplane.sh
+│   │   │   ├── tls.crt
+│   │   │   └── tls.key
 │   │   ├── install.sh
 │   │   ├── README.md
 │   │   └── teardown.sh
@@ -88,7 +90,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-37 directories, 48 files
+37 directories, 50 files
 ```
 
 ---
@@ -97,8 +99,6 @@ tree --dirsfirst >> README.md
 
 File name | Line number | Todo
 ---|---|---|
-[clusters/bootstrap/install.sh](clusters/bootstrap/install.sh)|31| configure sealed-secrets to be able to unseal sealed-secrets|
-[clusters/bootstrap/install.sh](clusters/bootstrap/install.sh)|35| remove relative path to YAML file or use absolute path from root of repo|
 
 ---
 

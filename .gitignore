@@ -1,3 +1,5 @@
 nohup.out
 *.json
+tls.crt
+tls.key
 
