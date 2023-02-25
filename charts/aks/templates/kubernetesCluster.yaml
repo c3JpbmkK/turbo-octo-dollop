@@ -16,7 +16,7 @@ spec:
     location: {{ .Values.location }}
     resourceGroupName: {{ .Release.Name }}
   providerConfigRef:
-    name: {{ .Values.providerConfig }}
+    name: {{ .Values.providerConfig.name }}
   writeConnectionSecretToRef:
     name: '{{ .Release.Name }}-connection-secret'
     namespace: crossplane-system

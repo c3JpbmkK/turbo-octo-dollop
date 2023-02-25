@@ -17,6 +17,6 @@ spec:
     nodeCount: {{ $nodePool.nodeCount }}
     vmSize: {{ $nodePool.vmSize }}
   providerConfigRef:
-    name: {{ .Values.providerConfig }}
+    name: {{ .Values.providerConfig.name }}
 
 {{- end }}

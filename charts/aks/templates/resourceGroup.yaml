@@ -8,4 +8,4 @@ spec:
   forProvider:
     location: {{ .Values.location }}
   providerConfigRef:
-    name: {{ .Values.providerConfig }}
+    name: {{ .Values.providerConfig.name }}

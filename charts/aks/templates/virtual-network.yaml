@@ -9,4 +9,4 @@ spec:
     location: West Europe
     resourceGroupName: {{ .Release.Name }}
   providerConfigRef:
-    name: {{ .Values.providerConfig }}
+    name: {{ .Values.providerConfig.name }}
