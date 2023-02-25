@@ -33,4 +33,4 @@ spec:
     name: {{ .Values.providerConfig.name }}
   writeConnectionSecretToRef:
     name: '{{ .Release.Name }}-connection-secret'
-    namespace: crossplane-system
+    namespace: {{ .Release.Namespace }}

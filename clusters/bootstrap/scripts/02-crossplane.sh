@@ -18,8 +18,8 @@ echo "Providers CRD ready"
 
 function installPackage {
   PROVIDER_NAME=$1
-  PROVIDER_VERSION=$2
-  PROVIDER_URL=$3
+  PROVIDER_URL=$2
+  PROVIDER_VERSION=$3
 
   echo "Creating provider from package ${PROVIDER_URL}"
   cat <<EOF | kubectl apply -f -
@@ -41,7 +41,11 @@ EOF
 }
 
 echo "Installing required packages"
-installPackage "upbound-provider-azure" "v0.28.0" "xpkg.upbound.io/upbound/provider-azure"  
+installPackage "provider-azure" "xpkg.upbound.io/upbound/provider-azure" "v0.28.0"
+installPackage "provider-azuread" "xpkg.upbound.io/upbound/provider-azuread" "v0.4.0"
+installPackage "provider-argocd" "xpkg.upbound.io/crossplane-contrib/provider-argocd" "v0.2.0"
+installPackage "provider-helm" "xpkg.upbound.io/crossplane-contrib/provider-helm" "v0.13.0"
+installPackage "provider-kubernetes" "xpkg.upbound.io/crossplane-contrib/provider-kubernetes" "v0.6.0"
 
 echo "Installing supplied crdentials"
 kubectl apply -f credentials/
