@@ -18,6 +18,8 @@ spec:
     workloadIdentityEnabled: {{ .Values.kubernetesCluster.workloadIdentityEnabled }}
     networkProfile: 
     - networkPlugin: azure
+      dockerBridgeCidr: {{ .Values.kubernetesCluster.networkProfile.dockerBridgeCidr }}
+      dnsServiceIp: {{ .Values.kubernetesCluster.networkProfile.dnsServiceIp }}
       serviceCidr: {{ .Values.kubernetesCluster.networkProfile.serviceCidr }}
     dnsPrefix: {{ .Release.Name }}
     identity:

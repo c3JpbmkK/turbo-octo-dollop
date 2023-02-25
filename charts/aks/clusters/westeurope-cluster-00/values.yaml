@@ -23,7 +23,9 @@ virtualNetwork:
 kubernetesCluster:
   skuTier: Free
   networkProfile:
+    dnsServiceIp: 10.64.0.10
     serviceCidr: 10.64.0.0/23
+    dockerBridgeCidr: 172.16.0.0/16
   oidcIssuerEnabled: true
   workloadIdentityEnabled: true
 
