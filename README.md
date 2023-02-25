@@ -21,14 +21,14 @@ tree --dirsfirst >> README.md
 │   │   └── values.yaml
 │   ├── argo-cd
 │   │   ├── clusters
-│   │   │   └── visual
+│   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── templates
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── cert-manager
 │   │   ├── clusters
-│   │   │   └── visual
+│   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── templates
 │   │   │   └── http01-clusterissuer.yaml
@@ -36,15 +36,13 @@ tree --dirsfirst >> README.md
 │   │   └── values.yaml
 │   ├── crossplane
 │   │   ├── clusters
-│   │   │   └── visual
+│   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   └── ingress-nginx
 │       ├── clusters
-│       │   ├── in-cluster
-│       │   │   └── values.yaml
-│       │   └── visual
+│       │   └── westeurope-cluster-00
 │       │       └── values.yaml
 │       ├── templates
 │       │   ├── dns-job.yaml
@@ -56,6 +54,7 @@ tree --dirsfirst >> README.md
 ├── clusters
 │   ├── bootstrap
 │   │   ├── apps
+│   │   │   └── westeurope-cluster-00.yaml
 │   │   ├── credentials
 │   │   │   ├── azure-providerconfig.yaml
 │   │   │   └── providerConfig.yaml
@@ -91,7 +90,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-39 directories, 49 files
+38 directories, 49 files
 ```
 
 ---
