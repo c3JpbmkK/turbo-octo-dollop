@@ -2,12 +2,11 @@
 
 email: s.mohanaarunachalam@reply.de
 
-certmanager:
-  installCRDs: true
+installCRDs: true
 
-  # https://github.com/cert-manager/cert-manager/issues/4114
-  # https://github.com/cert-manager/cert-manager/issues/4114#issuecomment-1145060432
-  # https://learn.microsoft.com/en-us/azure/aks/faq#can-admission-controller-webhooks-impact-kube-system-and-internal-aks-namespaces
-  # webhook:
-  #   validatingWebhookConfigurationAnnotations:
-  #     admissions.enforcer/disabled: "true"
+# https://github.com/cert-manager/cert-manager/issues/4114
+# https://github.com/cert-manager/cert-manager/issues/4114#issuecomment-1145060432
+# https://learn.microsoft.com/en-us/azure/aks/faq#can-admission-controller-webhooks-impact-kube-system-and-internal-aks-namespaces
+webhook:
+  validatingWebhookConfigurationAnnotations:
+    admissions.enforcer/disabled: "true"
