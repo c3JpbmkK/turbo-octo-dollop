@@ -17,9 +17,9 @@ spec:
     resourceGroupNameSelector:
       matchLabels:
         azure.upbound.io/resourceGroup: {{ $ReleaseName }}
-      virtualNetworkNameSelector:
-        matchLabels:
-          network.azure.upbound.io/virtualNetwork: {{ $ReleaseName }}
+    virtualNetworkNameSelector:
+      matchLabels:
+        network.azure.upbound.io/virtualNetwork: {{ $ReleaseName }}
   providerConfigRef:
     name: {{ $ProviderName }}
 
