@@ -34,12 +34,12 @@ spec:
   template:
     metadata:
       name: 'westeurope-cluster-00-{{ chart }}'
+      # WARNING: DELETION WILL PROPAGATE IF THIS FINALIZER IS USED
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
     spec:
       project: westeurope-cluster-00
       sources:
-      - repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
-        targetRevision: '7-tree'
-        ref: values
       - chart: '{{ chart }}'
         repoURL: '{{ repoURL }}'
         targetRevision: '{{ targetRevision }}'
@@ -48,6 +48,9 @@ spec:
           valueFiles:
             - $values/charts/{{ chart }}/values.yaml
             - $values/charts/{{ chart }}/clusters/westeurope-cluster-00/values.yaml
+      - repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+        targetRevision: '7-tree'
+        ref: values
       destination:
         name: westeurope-cluster-00
         namespace: '{{ namespace }}'
