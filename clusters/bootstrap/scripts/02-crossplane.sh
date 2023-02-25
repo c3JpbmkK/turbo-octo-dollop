@@ -4,9 +4,9 @@ helm repo add crossplane-stable https://charts.crossplane.io/stable
 helm repo update
 
 helm upgrade crossplane crossplane-stable/crossplane \
-                            --install \
-                            --namespace crossplane-system \
-                            --create-namespace  
+                        --install \
+                        --namespace crossplane-system \
+                        --create-namespace
 
 # Deploy azure provider
 ## https://marketplace.upbound.io/providers/upbound/provider-azure/v0.27.0
