@@ -18,6 +18,7 @@ spec:
     workloadIdentityEnabled: {{ .Values.kubernetesCluster.workloadIdentityEnabled }}
     networkProfile: 
     - networkPlugin: azure
+      serviceCidr: {{ .Values.kubernetesCluster.networkProfile.serviceCidr }}
     dnsPrefix: {{ .Release.Name }}
     identity:
       - type: SystemAssigned

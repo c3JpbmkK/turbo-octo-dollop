@@ -14,15 +14,16 @@ virtualNetwork:
   addressSpace: 10.64.0.0/16
   subnets:
     - name: default
-      addressPrefix: 10.64.0.0/22
-    - name: infrapool
       addressPrefix: 10.64.4.0/22
-    - name: workloadpool
+    - name: infrapool
       addressPrefix: 10.64.8.0/22
+    - name: workloadpool
+      addressPrefix: 10.64.12.0/22
 
 kubernetesCluster:
   skuTier: Free
-  # networkProfile:
+  networkProfile:
+    serviceCidr: 10.64.0.0/23
   oidcIssuerEnabled: true
   workloadIdentityEnabled: true
 
