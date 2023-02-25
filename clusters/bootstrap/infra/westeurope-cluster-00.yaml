@@ -16,6 +16,7 @@ spec:
     targetRevision: '7-tree'
     path: charts/aks
     helm:
+      releaseName: westeurope-cluster-00
       valueFiles:
         - values.yaml
         - clusters/westeurope-cluster-00/values.yaml
