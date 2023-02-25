@@ -16,7 +16,7 @@ spec:
     virtualNetworkNameRef:
       name: {{ $ReleaseName }}
   providerConfigRef:
-    name: {{ $ReleaseName }}
+    name: {{ .Values.providerConfig }}
 
 {{- end }}
 {{- else }}
@@ -34,5 +34,5 @@ spec:
       virtualNetworkNameRef:
         name: {{ $ReleaseName }}
     providerConfigRef:
-      name: {{ $ReleaseName }}
+      name: {{ .Values.providerConfig }}
 {{- end }}  

@@ -2,9 +2,8 @@
 
 deletionPolicy: Delete
 
-providerConfigSecret: 
+providerConfig: 
   name: azure-providerconfig
-  key: creds
 
 location: West Europe
 

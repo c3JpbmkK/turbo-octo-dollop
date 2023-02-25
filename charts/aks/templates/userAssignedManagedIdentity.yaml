@@ -9,4 +9,4 @@ spec:
     name: {{ .Release.Name }}
     resourceGroupName: {{ .Release.Name }}
   providerConfigRef:
-      name: {{ .Release.Name }}
+    name: {{ .Values.providerConfig }}
