@@ -1,6 +1,8 @@
 apiVersion: network.azure.upbound.io/v1beta1
 kind: PublicIP
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
   labels:
     network.azure.upbound.io/publicIP: {{ .Release.Name }}
   name: {{ .Release.Name }}
