@@ -24,9 +24,9 @@ spec:
 EOF
 
 # Wait for provier to become available
-Provider=$(kubectl get provider upbound-provider-azure -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')
+Provider=$(kubectl get provider "${PROVIDER_NAME}" -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')
 while [ -z "$Provider" ] ; do
     echo "Waiting for provider to become healthy"
     sleep 5
-    Provider=$(kubectl get provider upbound-provider-azure -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')
+    Provider=$(kubectl get provider "${PROVIDER_NAME}" -o json | jq -r 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name')
 done

@@ -11,7 +11,6 @@ helm upgrade sealed-secrets sealed-secrets/sealed-secrets \
                             --namespace kube-system \
                             --set-string fullnameOverride=sealed-secrets-controller
 
-
 # # https://github.com/bitnami-labs/sealed-secrets/blob/main/docs/bring-your-own-certificates.md
 # echo "Generating a new RSA key pair"
 # openssl req -x509 -nodes -newkey rsa:4096 -keyout tls.key -out tls.crt -subj "/CN=sealed-secret/O=sealed-secret" 2>/dev/null
