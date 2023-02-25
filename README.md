@@ -58,8 +58,7 @@ tree --dirsfirst >> README.md
 │   ├── bootstrap
 │   │   ├── apps
 │   │   ├── credentials
-│   │   │   ├── azure-providerconfig.yaml
-│   │   │   └── provider.yaml
+│   │   │   └── azure-providerconfig.yaml
 │   │   ├── infra
 │   │   │   └── westeurope-cluster-00.yaml
 │   │   ├── scripts
@@ -90,7 +89,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-37 directories, 50 files
+37 directories, 49 files
 ```
 
 ---
