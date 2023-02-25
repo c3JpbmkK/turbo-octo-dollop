@@ -71,6 +71,8 @@ tree --dirsfirst >> README.md
 │   │   ├── tls.crt
 │   │   └── tls.key
 │   └── westeurope-cluster-00
+│       ├── apps
+│       └── infra
 ├── hooks
 │   ├── pre-commit
 │   └── README.md
@@ -89,7 +91,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-37 directories, 49 files
+39 directories, 49 files
 ```
 
 ---
