@@ -10,26 +10,25 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  matrix:
-    generators:
-    - list:
-        elements:
-        - chart: argo-cd
-          repoURL: https://argoproj.github.io/argo-helm
-          targetRevision: 5.22.0
-          namespace: argocd
-        - chart: cert-manager
-          repoURL: https://charts.jetstack.io
-          targetRevision: v1.11.0
-          namespace: cert-manager
-        - chart: crossplane
-          repoURL: https://charts.crossplane.io/stable
-          targetRevision: 1.11.0
-          namespace: crossplane-system
-        - chart: ingress-nginx
-          repoURL: https://kubernetes.github.io/ingress-nginx
-          targetRevision: "4.5.2"
-          namespace: ingress-nginx
+  generators:
+  - list:
+      elements:
+      - chart: argo-cd
+        repoURL: https://argoproj.github.io/argo-helm
+        targetRevision: 5.22.0
+        namespace: argocd
+      - chart: cert-manager
+        repoURL: https://charts.jetstack.io
+        targetRevision: v1.11.0
+        namespace: cert-manager
+      - chart: crossplane
+        repoURL: https://charts.crossplane.io/stable
+        targetRevision: 1.11.0
+        namespace: crossplane-system
+      - chart: ingress-nginx
+        repoURL: https://kubernetes.github.io/ingress-nginx
+        targetRevision: "4.5.2"
+        namespace: ingress-nginx
   template:
     metadata:
       name: 'westeurope-cluster-00-{{ chart }}'
