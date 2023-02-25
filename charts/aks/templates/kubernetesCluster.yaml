@@ -11,9 +11,6 @@ spec:
       - name: default
         nodeCount: 1
         vmSize: Standard_DS2_v2
-        podSubnetIdSelector: 
-          matchLabels:
-            network.azure.upbound.io/subnet: default
         vnetSubnetIdSelector: 
           matchLabels:
             network.azure.upbound.io/subnet: default

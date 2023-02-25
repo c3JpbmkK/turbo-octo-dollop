@@ -17,9 +17,6 @@ spec:
         containerservice.azure.upbound.io/kubernetesCluster: {{ $ReleaseName }}
     nodeCount: {{ $nodePool.nodeCount }}
     vmSize: {{ $nodePool.vmSize }}
-    podSubnetIdSelector: 
-      matchLabels:
-        network.azure.upbound.io/subnet: {{ $nodePool.subnet }}
     vnetSubnetIdSelector: 
       matchLabels:
         network.azure.upbound.io/subnet: {{ $nodePool.subnet }}
