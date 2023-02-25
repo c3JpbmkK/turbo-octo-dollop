@@ -14,7 +14,7 @@ spec:
     node: {{ $nodePool.mode }}
     kubernetesClusterIdSelector:
       matchLabels:
-        kubernetesCluster: {{ $ReleaseName }}
+        containerservice.azure.upbound.io/kubernetesCluster: {{ $ReleaseName }}
     nodeCount: {{ $nodePool.nodeCount }}
     vmSize: {{ $nodePool.vmSize }}
     podSubnetIdSelector: 
