@@ -11,7 +11,7 @@ metadata:
   name: {{ $nodePool.name }}
 spec:
   forProvider:
-    node: {{ $nodePool.mode }}
+    mode: {{ $nodePool.mode }}
     kubernetesClusterIdSelector:
       matchLabels:
         containerservice.azure.upbound.io/kubernetesCluster: {{ $ReleaseName }}
