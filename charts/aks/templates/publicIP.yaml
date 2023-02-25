@@ -10,6 +10,6 @@ spec:
   forProvider:
     allocationMethod: {{ .Values.publicIP.allocationMethod }}
     location: {{ .Values.location }}
-    resourceGroupName: mc_{{ .Release.Name }}_{{ .Release.Name }}_{{ .Values.location }}
+    resourceGroupName: mc_{{ .Release.Name }}_{{ .Release.Name }}_{{ nospace .Values.location }}
   providerConfigRef:
     name: {{ .Values.providerConfig.name }}
