@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: westeurope-cluster-00
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
   labels:
     cluster: westeurope-cluster-00
     topology.kubernetes.io/region: westeurope
@@ -15,7 +13,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
-    targetRevision: '6-hooks'
+    targetRevision: '7-tree'
     path: charts/aks
     helm:
       valueFiles:
