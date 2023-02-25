@@ -1,5 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
   name: westeurope-cluster-00-apps
   namespace: argocd
@@ -10,26 +10,46 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  generators:
-    - git:
-        repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
-        revision: '7-tree'
-        directories:
-        - path: charts
-        - path: charts/aks
-          exclude: true
+  matrix:
+    generators:
+    - list:
+        elements:
+        - chart: argo-cd
+          repoURL: https://argoproj.github.io/argo-helm
+          targetRevision: 5.22.0
+          namespace: argocd
+        - chart: cert-manager
+          repoURL: https://charts.jetstack.io
+          targetRevision: v1.11.0
+          namespace: cert-manager
+        - chart: crossplane
+          repoURL: https://charts.crossplane.io/stable
+          targetRevision: 1.11.0
+          namespace: crossplane-system
+        - chart: ingress-nginx
+          repoURL: https://kubernetes.github.io/ingress-nginx
+          targetRevision: "4.5.2"
+          namespace: ingress-nginx
   template:
     metadata:
-      name: 'westeurope-cluster-00-{{path.basename}}'
+      name: 'westeurope-cluster-00-{{ chart }}'
     spec:
-      project: default
-      source:
-        repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+      project: westeurope-cluster-00
+      sources:
+      - repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
         targetRevision: '7-tree'
-        path: '{{path}}'
+        ref: values
+      - chart: {{ chart }}
+        repoURL: {{ repoURL }}
+        targetRevision: {{ targetRevision }}
+        helm:
+          releaseName: {{ chart }}
+          valueFiles:
+            - $values/charts/{{ chart }}/values.yaml
+            - $values/charts/{{ chart }}/clusters/westeurope-cluster-00/values.yaml
       destination:
-        name: 'westeurope-cluster-00'
-        namespace: '{{path.basename}}'
+        name: westeurope-cluster-00
+        namespace: {{ namespace }}
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
@@ -39,4 +59,3 @@ spec:
         automated:
           prune: true
           selfHeal: true
-          project: westeurope-cluster-00

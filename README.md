@@ -24,33 +24,21 @@ tree --dirsfirst >> README.md
 │   │   ├── clusters
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
-│   │   ├── templates
-│   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── cert-manager
 │   │   ├── clusters
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
-│   │   ├── templates
-│   │   │   └── http01-clusterissuer.yaml
-│   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── crossplane
 │   │   ├── clusters
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
-│   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   └── ingress-nginx
 │       ├── clusters
 │       │   └── westeurope-cluster-00
 │       │       └── values.yaml
-│       ├── templates
-│       │   ├── dns-job.yaml
-│       │   ├── dns-rolebinding.yaml
-│       │   ├── dns-role.yaml
-│       │   └── dns-serviceaccount.yaml
-│       ├── Chart.yaml
 │       └── values.yaml
 ├── clusters
 │   ├── bootstrap
@@ -91,7 +79,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-38 directories, 50 files
+35 directories, 41 files
 ```
 
 ---
@@ -108,7 +96,6 @@ File name | Line number | Todo
 File name | Line number | Chore
 ---|---|---|
 [charts/aks/templates/dnsZoneUpdate-job.yaml.txt](charts/aks/templates/dnsZoneUpdate-job.yaml.txt)|56| remove this line if design is accepted|
-[charts/ingress-nginx/templates/dns-job.yaml](charts/ingress-nginx/templates/dns-job.yaml)|56| remove this line if design is accepted|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|7| Advanced management of sealed-secrets sealing key secret|
 
