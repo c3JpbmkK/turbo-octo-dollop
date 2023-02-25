@@ -20,6 +20,12 @@ virtualNetwork:
     - name: workloadpool
       addressPrefix: 10.64.8.0/22
 
+kubernetesCluster:
+  skuTier: Free
+  networkProfile:
+    oidcIssuerEnabled: true
+  workloadIdentityEnabled: true
+
 additionalNodePools:
   - name: infrapool
     subnet: infrapool
