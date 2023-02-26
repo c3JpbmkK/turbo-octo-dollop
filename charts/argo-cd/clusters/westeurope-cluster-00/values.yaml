@@ -3,8 +3,6 @@
 server:
   ingress:
     enabled: true
-    annotations:
-      cert-manager.io/cluster-issuer: cert-manager-http01
     hosts:
       - argocd.westeurope-cluster-00.clusters.sysctls.de
     tls: 
