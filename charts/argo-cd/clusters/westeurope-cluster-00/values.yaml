@@ -1,5 +1,10 @@
 # Values file for argocd
 
+configs:
+  create: true
+  params:
+    otlp.address: jaeger-agent.jaeger.svc
+
 server:
   ingress:
     enabled: true
