@@ -12,3 +12,11 @@ query:
       - secretName: jaeger-query-tls
         hosts:
           - jaeger.westeurope-cluster-00.clusters.sysctls.de
+
+collector:
+  service:
+    oltp:
+      grpc:
+        port: 4317
+      http:
+        port: 4318
