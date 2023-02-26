@@ -3,7 +3,7 @@
 configs:
   create: true
   params:
-    otlp.address: jaeger-collector.jaeger.svc:14250
+    otlp.address: jaeger-collector.jaeger.svc:14268
 
 server:
   ingress:
