@@ -53,6 +53,8 @@ tree --dirsfirst >> README.md
 │   │   └── values.yaml
 │   └── jaeger
 │       ├── clusters
+│       │   └── westeurope-cluster-00
+│       │       └── values.yaml
 │       ├── templates
 │       ├── Chart.yaml
 │       └── values.yaml
@@ -95,7 +97,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-42 directories, 50 files
+43 directories, 51 files
 ```
 
 ---
