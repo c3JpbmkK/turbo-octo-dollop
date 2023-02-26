@@ -32,6 +32,10 @@ spec:
         repoURL: https://kubernetes.github.io/ingress-nginx
         targetRevision: "4.5.2"
         namespace: ingress-nginx
+      - chart: jaeger
+        repoURL: https://jaegertracing.github.io/helm-charts
+        targetRevision: "0.67.2"
+        namespace: jaeger
   template:
     metadata:
       name: 'westeurope-cluster-00-{{ chart }}'

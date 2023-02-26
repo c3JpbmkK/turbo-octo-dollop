@@ -44,10 +44,15 @@ tree --dirsfirst >> README.md
 │   │   ├── templates
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
-│   └── ingress-nginx
+│   ├── ingress-nginx
+│   │   ├── clusters
+│   │   │   └── westeurope-cluster-00
+│   │   │       └── values.yaml
+│   │   ├── templates
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
+│   └── jaeger
 │       ├── clusters
-│       │   └── westeurope-cluster-00
-│       │       └── values.yaml
 │       ├── templates
 │       ├── Chart.yaml
 │       └── values.yaml
@@ -90,7 +95,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-39 directories, 48 files
+42 directories, 50 files
 ```
 
 ---
