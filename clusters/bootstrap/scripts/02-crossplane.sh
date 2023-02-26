@@ -37,10 +37,11 @@ EOF
   set +e
   Provider=$(kubectl get provider.pkg "${PROVIDER_NAME}" -o json 2>/dev/null | jq -er 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name' 2>/dev/null)
   while [ -z "$Provider" ] ; do
-      echo "Waiting for ${PROVIDER_NAME} to become healthy"
+      echo "Waiting for ${PROVIDER_NAME} to become Healthy"
       sleep 5
       Provider=$(kubectl get provider.pkg "${PROVIDER_NAME}" -o json 2>/dev/null | jq -er 'select(.status.conditions[]|(.type=="Healthy") and (.status=="True")).metadata.name' 2>/dev/null)
   done
+  echo "${PROVIDER_NAME} is Installed and Healthy"
   set -e
 }
 
