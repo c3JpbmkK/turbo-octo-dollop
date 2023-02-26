@@ -4,7 +4,7 @@ server:
   ingress:
     enabled: true
     annotations:
-      cert-manager.io/cluster-issuer: westeurope-cluster-00-cert-manager-http01-clusterissuer
+      cert-manager.io/cluster-issuer: cert-manager-http01
     hosts:
       - argocd.westeurope-cluster-00.clusters.sysctls.de
     tls: 
