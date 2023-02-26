@@ -3,6 +3,10 @@
 defaultBackend:
   enabled: true
 controller:
+  config:
+    data:
+      enable-opentracing: "true"
+      jaeger-collector-host: jaeger-agent.jaeger.svc
   resources:
     limits:
       cpu: 1

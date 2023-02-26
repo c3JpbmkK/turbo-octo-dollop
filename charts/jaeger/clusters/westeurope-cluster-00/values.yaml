@@ -4,6 +4,7 @@ query:
   ingress:
     enabled: true
     annotations:
+      nginx.ingress.kubernetes.io/enable-opentracing: "true"
       cert-manager.io/cluster-issuer: cert-manager-http01
     hosts:
       - jaeger.westeurope-cluster-00.clusters.sysctls.de
