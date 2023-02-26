@@ -51,6 +51,14 @@ spec:
             - $values/charts/{{ chart }}/clusters/westeurope-cluster-00/values.yaml
       - repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
         targetRevision: '7-tree'
+        path: charts/{{ chart }}
+        helm:
+          releaseName: '{{ chart }}'
+          valueFiles:
+            - $values/charts/{{ chart }}/values.yaml
+            - $values/charts/{{ chart }}/clusters/westeurope-cluster-00/values.yaml
+      - repoURL: 'https://github.com/c3JpbmkK/turbo-octo-dollop'
+        targetRevision: '7-tree'
         ref: values
       destination:
         name: westeurope-cluster-00

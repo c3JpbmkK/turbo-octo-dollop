@@ -98,6 +98,7 @@ tree --dirsfirst >> README.md
 
 File name | Line number | Todo
 ---|---|---|
+[charts/aks/clusters/westeurope-cluster-00/values.yaml](charts/aks/clusters/westeurope-cluster-00/values.yaml)|13| peer two vnets|
 
 ---
 
@@ -105,6 +106,7 @@ File name | Line number | Todo
 
 File name | Line number | Chore
 ---|---|---|
+[charts/aks/clusters/westeurope-cluster-00/values.yaml](charts/aks/clusters/westeurope-cluster-00/values.yaml)|14| identify how to connect to vnets, either using single provider config or two|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|5| find out about `--set-string fullnameOverride=sealed-secrets-controller`|
 [clusters/bootstrap/README.md](clusters/bootstrap/README.md)|7| Advanced management of sealed-secrets sealing key secret|
 [clusters/bootstrap/apps/westeurope-cluster-00.yaml](clusters/bootstrap/apps/westeurope-cluster-00.yaml)|14| change to true after development|

@@ -1,0 +1,12 @@
+apiVersion: v2
+version: "0.0.1"
+name: cert-manager
+description: A helm chart for cert-manager
+home: https://github.com/cert-manager/cert-manager
+sources:
+  - https://github.com/cert-manager/cert-manager
+keywords:
+  - cert-manager
+  - kube-lego
+  - letsencrypt
+  - tls

@@ -10,6 +10,8 @@ location: West Europe
 clusterName: westeurope-cluster-00
 clusterDomain: clusters.sysctls.de
 
+# todo: peer two vnets
+# chore: identify how to connect to vnets, either using single provider config or two
 virtualNetwork:
   addressSpace: 10.64.0.0/16
   subnets:
