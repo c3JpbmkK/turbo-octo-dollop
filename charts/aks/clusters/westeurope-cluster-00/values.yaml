@@ -24,6 +24,7 @@ virtualNetwork:
 
 publicIP:
   allocationMethod: Static
+  sku: Standard
   apps:
     - argocd
     - jaeger

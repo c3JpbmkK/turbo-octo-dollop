@@ -8,6 +8,7 @@ metadata:
   name: {{ .Release.Name }}
 spec:
   forProvider:
+    sku: {{ .Values.publicIP.sku }}
     allocationMethod: {{ .Values.publicIP.allocationMethod }}
     location: {{ .Values.location }}
     resourceGroupName: mc_{{ .Release.Name }}_{{ .Release.Name }}_{{ nospace .Values.location }}
