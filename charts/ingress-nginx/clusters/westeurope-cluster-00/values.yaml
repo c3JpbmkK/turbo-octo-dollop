@@ -12,3 +12,5 @@ controller:
       memory: 500Mi
   autoscaling:
     enabled: false
+  opentelemetry:
+    enabled: true
