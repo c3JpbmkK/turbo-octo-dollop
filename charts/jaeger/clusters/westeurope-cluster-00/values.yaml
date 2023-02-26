@@ -15,7 +15,7 @@ query:
 
 collector:
   service:
-    oltp:
+    otlp:
       grpc:
         port: 4317
       http:
