@@ -44,8 +44,14 @@ additionalNodePools:
     mode: User
     vmSize: Standard_D4s_v3
     nodeCount: 1
+    enableAutoScaling: true
+    minCount: 1
+    maxCount: 5
   - name: workloadpool
     subnet: workloadpool
     mode: User
     vmSize: Standard_D4s_v3
     nodeCount: 1
+    enableAutoScaling: false
+    minCount: 1
+    maxCount: 5

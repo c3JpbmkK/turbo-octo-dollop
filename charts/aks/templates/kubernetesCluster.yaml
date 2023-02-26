@@ -11,8 +11,10 @@ spec:
     skuTier: {{ .Values.kubernetesCluster.skuTier }}
     defaultNodePool:
       - name: default
-        nodeCount: 1
-        vmSize: Standard_DS2_v2
+        enableAutoScaling: true
+        minCount: 1
+        maxCount: 5
+        vmSize: Standard_D4s_v3
         vnetSubnetIdSelector: 
           matchLabels:
             network.azure.upbound.io/subnet: default

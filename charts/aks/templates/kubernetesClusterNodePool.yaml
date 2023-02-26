@@ -14,6 +14,14 @@ metadata:
 spec:
   forProvider:
     mode: {{ $nodePool.mode }}
+    {{- if $nodePool.enableAutoScaling }}
+    enableAutoScaling: true
+    minCount: 1
+    maxCount: 5
+    {{- else }}
+    nodeCount: 1
+    {{- end }}
+    vmSize: Standard_D4s_v3
     kubernetesClusterIdSelector:
       matchLabels:
         containerservice.azure.upbound.io/kubernetesCluster: {{ $ReleaseName }}
