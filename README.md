@@ -34,6 +34,7 @@ tree --dirsfirst >> README.md
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── templates
+│   │   │   └── http01-clusterissuer.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   ├── crossplane
@@ -89,7 +90,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-39 directories, 47 files
+39 directories, 48 files
 ```
 
 ---
