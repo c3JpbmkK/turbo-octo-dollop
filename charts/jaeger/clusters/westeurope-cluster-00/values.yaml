@@ -1,0 +1,13 @@
+# Values file for jaeger
+
+query:
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: cert-manager-http01
+    hosts:
+      - jaeger.westeurope-cluster-00.clusters.sysctls.de
+    tls:
+      - secretName: jaeger-query-tls
+        hosts:
+          - jaeger.westeurope-cluster-00.clusters.sysctls.de
