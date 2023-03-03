@@ -44,6 +44,13 @@ tree --dirsfirst >> README.md
 │   │   ├── templates
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
+│   ├── ingress-haproxy
+│   │   ├── clusters
+│   │   │   └── westeurope-cluster-00
+│   │   │       └── values.yaml
+│   │   ├── templates
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
 │   ├── ingress-nginx
 │   │   ├── clusters
 │   │   │   └── westeurope-cluster-00
@@ -97,7 +104,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-43 directories, 51 files
+47 directories, 54 files
 ```
 
 ---

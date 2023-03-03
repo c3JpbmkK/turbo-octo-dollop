@@ -1,0 +1,10 @@
+apiVersion: v2
+version: "0.0.1"
+name: ingress-nginx
+description: Ingress controller for Kubernetes using Haproxy
+home: https://www.haproxy.com/documentation/kubernetes/latest/
+sources:
+  - https://github.com/haproxytech/kubernetes-ingress
+keywords:
+  - ingress
+  - haproxy
