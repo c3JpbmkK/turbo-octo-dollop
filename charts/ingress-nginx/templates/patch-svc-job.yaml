@@ -29,7 +29,7 @@ spec:
         image: mcr.microsoft.com/azure-cli:latest
         env:
           - name: INGRESS_CONTROLLER_SERVICE
-            value: 'ingress-nginx-controller'
+            value: '{{ .Release.Name }}-controller'
           - name: INGRESS_PUBLIC_IP
             value: '13.80.101.179'
         command:
