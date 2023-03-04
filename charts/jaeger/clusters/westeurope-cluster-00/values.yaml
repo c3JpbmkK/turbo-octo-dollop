@@ -7,7 +7,7 @@ query:
       nginx.ingress.kubernetes.io/enable-opentracing: "true"
       cert-manager.io/cluster-issuer: cert-manager-http01
       nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.westeurope-cluster-00.clusters.sysctls.de/oauth2/auth"
-      nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.westeurope-cluster-00.clusters.sysctls.de/oauth2/start?rd=https://jaeger.westeurope-cluster-00.clusters.sysctls.de/oauth2/callback"
+      nginx.ingress.kubernetes.io/auth-signin: "https://jaeger.westeurope-cluster-00.clusters.sysctls.de/oauth2/callback"
     hosts:
       - jaeger.westeurope-cluster-00.clusters.sysctls.de
     tls:
