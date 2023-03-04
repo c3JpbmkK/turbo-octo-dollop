@@ -69,7 +69,7 @@ tree --dirsfirst >> README.md
 │   │   ├── templates
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
-│   └── oauth-proxy
+│   └── oauth2-proxy
 │       ├── clusters
 │       │   └── westeurope-cluster-00
 │       │       └── values.yaml
