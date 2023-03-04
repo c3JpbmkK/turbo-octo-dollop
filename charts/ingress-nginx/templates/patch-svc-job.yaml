@@ -1,3 +1,5 @@
+# This whole thing could be packaged into a minimal container
+
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -39,8 +41,21 @@ spec:
             # Setup kubectl cli
             az aks install-cli
 
-            # Get IP address of the nginx loadbalancer service
+            # Wait untill the service is available
+            # Ideally this is not needed as this job is started post-install/post-upgrade 
+            until kubectl get "svc/${INGRESS_CONTROLLER_SERVICE}" -o name ; do 
+            echo "Waiting for service to come up"
+            sleep 5
+            done
+
+            # Patch the service to use a static loadBalancerIP 
             kubectl patch "svc/${INGRESS_CONTROLLER_SERVICE}" -p "{\"spec\":{\"loadBalancerIP\":\"${INGRESS_PUBLIC_IP}\"}}"
-            sleep inf
-            # Add new record to the DNS zone
+
+            # Check that the new IP is loaded
+            untill [ $(kubectl get "svc/${INGRESS_CONTROLLER_SERVICE}" -o json | jq -r '.status.loadBalancer.ingress[0].ip') == "${INGRESS_PUBLIC_IP}" ] ; do 
+            echo "Waiting for public IP to be loaded"
+            sleep 5
+            done
+
+            echo "loadBalancerIP successfully patched"
       restartPolicy: Never
