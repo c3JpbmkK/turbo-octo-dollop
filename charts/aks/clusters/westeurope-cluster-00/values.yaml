@@ -29,6 +29,7 @@ publicIP:
     - argocd
     - jaeger
     - grafana
+    - oauth2-proxy
 
 kubernetesCluster:
   skuTier: Free
