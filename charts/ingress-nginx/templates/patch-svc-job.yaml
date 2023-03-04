@@ -41,7 +41,7 @@ spec:
             # Setup kubectl cli
             az aks install-cli
 
-            # Wait untill the service is available
+            # Wait until the service is available
             # Ideally this is not needed as this job is started post-install/post-upgrade 
             until kubectl get "svc/${INGRESS_CONTROLLER_SERVICE}" -o name ; do 
             echo "Waiting for service to come up"
@@ -52,7 +52,7 @@ spec:
             kubectl patch "svc/${INGRESS_CONTROLLER_SERVICE}" -p "{\"spec\":{\"loadBalancerIP\":\"${INGRESS_PUBLIC_IP}\"}}"
 
             # Check that the new IP is loaded
-            untill [ $(kubectl get "svc/${INGRESS_CONTROLLER_SERVICE}" -o json | jq -r '.status.loadBalancer.ingress[0].ip') == "${INGRESS_PUBLIC_IP}" ] ; do 
+            until [ $(kubectl get "svc/${INGRESS_CONTROLLER_SERVICE}" -o json | jq -r '.status.loadBalancer.ingress[0].ip') == "${INGRESS_PUBLIC_IP}" ] ; do 
             echo "Waiting for public IP to be loaded"
             sleep 5
             done
