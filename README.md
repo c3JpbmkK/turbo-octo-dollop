@@ -62,7 +62,14 @@ tree --dirsfirst >> README.md
 │   │   │   └── patch-svc-serviceAccount.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
-│   └── jaeger
+│   ├── jaeger
+│   │   ├── clusters
+│   │   │   └── westeurope-cluster-00
+│   │   │       └── values.yaml
+│   │   ├── templates
+│   │   ├── Chart.yaml
+│   │   └── values.yaml
+│   └── oauth-proxy
 │       ├── clusters
 │       │   └── westeurope-cluster-00
 │       │       └── values.yaml
@@ -108,7 +115,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-47 directories, 58 files
+51 directories, 61 files
 ```
 
 ---
