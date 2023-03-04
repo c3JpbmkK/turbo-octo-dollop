@@ -26,18 +26,10 @@ spec:
       - name: azure-cli
         image: mcr.microsoft.com/azure-cli:latest
         env:
-          - name: DNS_ZONE_SUBSCRIPTION
-            value: '{{ .Values.dnsZoneSubscription }}'
-          - name: DNS_ZONE_CONTRIBUTOR_IDENTITY
-            value: '{{ .Values.dnsZoneContributorIdentity }}'
-          - name: CLUSTER_TENANT
-            value: '{{ .Values.dnsZoneContributorTenant }}'
-          - name: CLUSTER_NAME
-            value: '{{ .Values.clusterName }}'
-          - name: CLUSTER_DOMAIN
-            value: '{{ .Values.dnsZoneName }}'
-          - name: RESOURCE_GROUP
-            value: '{{ .Values.dnsZoneResourceGroup }}'
+          - name: INGRESS_CONTROLLER_SERVICE
+            value: 'ingress-nginx-controller'
+          - name: INGRESS_PUBLIC_IP
+            value: '13.80.101.179'
         command:
           - sh
           - -c
@@ -48,8 +40,7 @@ spec:
             az aks install-cli
 
             # Get IP address of the nginx loadbalancer service
-            Response=$(kubectl --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)" get --raw='/api/v1/namespaces/ingress-nginx/services')
-            LB_IP=$(echo "$Response" | jq -r '.items[]|select(.spec.type == "LoadBalancer").status.loadBalancer.ingress[].ip')
+            kubectl patch "svc/${INGRESS_CONTROLLER_SERVICE}" -p '{"spec":{"loadBalancerIP":"${INGRESS_PUBLIC_IP}"}}'
             sleep inf
             # Add new record to the DNS zone
       restartPolicy: Never
