@@ -111,11 +111,12 @@ tree --dirsfirst >> README.md
 ├── nohup.out
 ├── port-forward.sh
 ├── README.md
+├── secret.json
 ├── setup.sh
 ├── teardown.sh
 └── workloadIdentity.sh
 
-51 directories, 61 files
+51 directories, 62 files
 ```
 
 ---

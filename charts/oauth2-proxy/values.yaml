@@ -1,1 +1,6 @@
 # Values file for oauth2-proxy
+
+
+extraEnv:
+  OAUTH2_PROXY_AZURE_TENANT: 8dd2b4a0-d0ce-44ca-b481-190c81849499
+  OAUTH2_PROXY_OIDC_ISSUER_URL: https://sts.windows.net/8dd2b4a0-d0ce-44ca-b481-190c81849499/
