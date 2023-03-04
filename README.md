@@ -56,6 +56,10 @@ tree --dirsfirst >> README.md
 │   │   │   └── westeurope-cluster-00
 │   │   │       └── values.yaml
 │   │   ├── templates
+│   │   │   ├── patch-svc-job.yaml
+│   │   │   ├── patch-svc-roleBinding.yaml
+│   │   │   ├── patch-svc-role.yaml
+│   │   │   └── patch-svc-serviceAccount.yaml
 │   │   ├── Chart.yaml
 │   │   └── values.yaml
 │   └── jaeger
@@ -104,7 +108,7 @@ tree --dirsfirst >> README.md
 ├── teardown.sh
 └── workloadIdentity.sh
 
-47 directories, 54 files
+47 directories, 58 files
 ```
 
 ---

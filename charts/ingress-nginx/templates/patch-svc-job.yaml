@@ -1,0 +1,55 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: '{{ .Release.Name }}-lb'
+  namespace: '{{ .Release.Namespace }}'
+  annotations:
+    helm.sh/hook: post-install, post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+spec:
+  completionMode: NonIndexed
+  backoffLimit: 1
+  completions: 1
+  parallelism: 1
+  suspend: false
+  ttlSecondsAfterFinished: 300
+  template:
+    metadata:
+      annotations:
+        azure.workload.identity/use: 'true'
+      labels:
+        azure.workload.identity/use: 'true'
+    spec:
+      serviceAccountName: '{{ .Release.Name }}-lb'
+      automountServiceAccountToken: true
+      containers:
+      - name: azure-cli
+        image: mcr.microsoft.com/azure-cli:latest
+        env:
+          - name: DNS_ZONE_SUBSCRIPTION
+            value: '{{ .Values.dnsZoneSubscription }}'
+          - name: DNS_ZONE_CONTRIBUTOR_IDENTITY
+            value: '{{ .Values.dnsZoneContributorIdentity }}'
+          - name: CLUSTER_TENANT
+            value: '{{ .Values.dnsZoneContributorTenant }}'
+          - name: CLUSTER_NAME
+            value: '{{ .Values.clusterName }}'
+          - name: CLUSTER_DOMAIN
+            value: '{{ .Values.dnsZoneName }}'
+          - name: RESOURCE_GROUP
+            value: '{{ .Values.dnsZoneResourceGroup }}'
+        command:
+          - sh
+          - -c
+          - |
+            #!/usr/bin/env bash
+
+            # Setup kubectl cli
+            az aks install-cli
+
+            # Get IP address of the nginx loadbalancer service
+            Response=$(kubectl --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)" get --raw='/api/v1/namespaces/ingress-nginx/services')
+            LB_IP=$(echo "$Response" | jq -r '.items[]|select(.spec.type == "LoadBalancer").status.loadBalancer.ingress[].ip')
+            sleep inf
+            # Add new record to the DNS zone
+      restartPolicy: Never
