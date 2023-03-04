@@ -40,7 +40,7 @@ spec:
             az aks install-cli
 
             # Get IP address of the nginx loadbalancer service
-            kubectl patch "svc/${INGRESS_CONTROLLER_SERVICE}" -p '{"spec":{"loadBalancerIP":"${INGRESS_PUBLIC_IP}"}}'
+            kubectl patch "svc/${INGRESS_CONTROLLER_SERVICE}" -p "{\"spec\":{\"loadBalancerIP\":\"${INGRESS_PUBLIC_IP}\"}}"
             sleep inf
             # Add new record to the DNS zone
       restartPolicy: Never
