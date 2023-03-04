@@ -6,6 +6,8 @@ extraEnv:
     value: 8dd2b4a0-d0ce-44ca-b481-190c81849499
   - name: OAUTH2_PROXY_OIDC_ISSUER_URL
     value: https://sts.windows.net/8dd2b4a0-d0ce-44ca-b481-190c81849499/
+  - name: OAUTH2_PROXY_PROVIDER
+    value: azure
 
 ingress:
   enabled: true
